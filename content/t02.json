@@ -1,0 +1,965 @@
+{
+ "id": "t02",
+ "title": "Chữ cái (2) và câu cửa miệng",
+ "items": {
+  "w.papa": {
+   "ru": "па́па",
+   "vi": "bố",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.da": {
+   "ru": "да",
+   "vi": "vâng, có",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.imya": {
+   "ru": "и́мя",
+   "vi": "tên",
+   "note": "Giống trung (đuôi -мя).",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.les": {
+   "ru": "лес",
+   "vi": "rừng",
+   "ipa": "lʲes",
+   "note": "Đọc [lʲes], không đọc \"less\".",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.drug": {
+   "ru": "друг",
+   "vi": "bạn",
+   "ipa": "druk",
+   "note": "г cuối từ đọc [k].",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.kafe": {
+   "ru": "кафе́",
+   "vi": "quán cà phê",
+   "ipa": "kɐˈfɛ",
+   "note": "Từ mượn: ф đọc cứng trước е.",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.eto": {
+   "ru": "э́то",
+   "vi": "đây là, đó là",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.ya": {
+   "ru": "я",
+   "vi": "tôi",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.yug": {
+   "ru": "юг",
+   "vi": "phía nam",
+   "ipa": "juk",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.yolka": {
+   "ru": "ёлка",
+   "vi": "cây thông (Noel)",
+   "note": "ё luôn mang trọng âm.",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.gazeta": {
+   "ru": "газе́та",
+   "vi": "tờ báo",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.myaso": {
+   "ru": "мя́со",
+   "vi": "thịt",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.more": {
+   "ru": "мо́ре",
+   "vi": "biển",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.privet": {
+   "ru": "приве́т",
+   "vi": "chào",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.spasibo": {
+   "ru": "спаси́бо",
+   "vi": "cảm ơn",
+   "tags": [
+    "letters3"
+   ]
+  },
+  "w.chay": {
+   "ru": "чай",
+   "vi": "trà",
+   "tags": [
+    "letters4"
+   ]
+  },
+  "w.khorosho": {
+   "ru": "хорошо́",
+   "vi": "tốt",
+   "ipa": "xərɐˈʂo",
+   "tags": [
+    "letters4"
+   ]
+  },
+  "w.vy": {
+   "ru": "вы",
+   "vi": "ngài, các bạn",
+   "tags": [
+    "letters4"
+   ]
+  },
+  "w.my": {
+   "ru": "мы",
+   "vi": "chúng tôi",
+   "tags": [
+    "letters4"
+   ]
+  },
+  "w.syr": {
+   "ru": "сыр",
+   "vi": "phô mai",
+   "tags": [
+    "letters4"
+   ]
+  },
+  "w.borshch": {
+   "ru": "борщ",
+   "vi": "súp borscht",
+   "tags": [
+    "letters4"
+   ]
+  },
+  "w.ulitsa": {
+   "ru": "у́лица",
+   "vi": "đường phố",
+   "tags": [
+    "letters4"
+   ]
+  },
+  "w.zhena": {
+   "ru": "жена́",
+   "vi": "vợ",
+   "ipa": "ʐɨˈna",
+   "tags": [
+    "letters4"
+   ]
+  },
+  "w.shkola": {
+   "ru": "шко́ла",
+   "vi": "trường học",
+   "tags": [
+    "letters4"
+   ]
+  },
+  "w.moy": {
+   "ru": "мой",
+   "vi": "của tôi",
+   "tags": [
+    "letters4"
+   ]
+  },
+  "w.shchuka": {
+   "ru": "щу́ка",
+   "vi": "cá chó (cá pike)",
+   "tags": [
+    "letters4"
+   ]
+  },
+  "w.tsirk": {
+   "ru": "цирк",
+   "vi": "rạp xiếc",
+   "ipa": "tsɨrk",
+   "note": "ци đọc [tsɨ].",
+   "tags": [
+    "letters4"
+   ]
+  },
+  "w.shirokiy": {
+   "ru": "широ́кий",
+   "vi": "rộng",
+   "ipa": "ʂɨˈrokʲɪj",
+   "note": "ши đọc [ʂɨ].",
+   "tags": [
+    "letters4"
+   ]
+  },
+  "w.brat": {
+   "ru": "брат",
+   "vi": "anh trai, em trai",
+   "tags": [
+    "letters5"
+   ]
+  },
+  "w.brat2": {
+   "ru": "брать",
+   "vi": "lấy, cầm",
+   "note": "ь làm т mềm đi.",
+   "tags": [
+    "letters5"
+   ]
+  },
+  "w.den": {
+   "ru": "день",
+   "vi": "ngày",
+   "tags": [
+    "letters5"
+   ]
+  },
+  "w.mat": {
+   "ru": "мать",
+   "vi": "mẹ",
+   "tags": [
+    "letters5"
+   ]
+  },
+  "w.pyat": {
+   "ru": "пять",
+   "vi": "năm (số 5)",
+   "tags": [
+    "letters5"
+   ]
+  },
+  "w.sest": {
+   "ru": "сесть",
+   "vi": "ngồi xuống",
+   "tags": [
+    "letters5"
+   ]
+  },
+  "w.sjest": {
+   "ru": "съесть",
+   "vi": "ăn (hết)",
+   "note": "ъ tách с và е: đọc [sjestʲ].",
+   "tags": [
+    "letters5"
+   ]
+  },
+  "w.podjezd": {
+   "ru": "подъе́зд",
+   "vi": "lối vào (tòa nhà)",
+   "ipa": "pɐˈdjest",
+   "tags": [
+    "letters5"
+   ]
+  },
+  "w.god": {
+   "ru": "год",
+   "vi": "năm (thời gian)",
+   "ipa": "got",
+   "tags": [
+    "phon"
+   ]
+  },
+  "w.moloko": {
+   "ru": "молоко́",
+   "vi": "sữa",
+   "ipa": "məlɐˈko",
+   "tags": [
+    "phon"
+   ]
+  },
+  "w.gorod": {
+   "ru": "го́род",
+   "vi": "thành phố",
+   "ipa": "ˈɡorət",
+   "tags": [
+    "phon"
+   ]
+  },
+  "p.da": {
+   "ru": "Да.",
+   "vi": "Vâng. / Có.",
+   "de": "Ja.",
+   "en": "Yes.",
+   "tags": [
+    "phrases"
+   ]
+  },
+  "p.net": {
+   "ru": "Нет.",
+   "vi": "Không.",
+   "de": "Nein.",
+   "en": "No.",
+   "tags": [
+    "phrases"
+   ]
+  },
+  "p.konechno": {
+   "ru": "Коне́чно!",
+   "vi": "Tất nhiên!",
+   "de": "Natürlich!",
+   "en": "Of course!",
+   "ipa": "kɐˈnʲeʂnə",
+   "note": "ч ở đây đọc [ʂ].",
+   "tags": [
+    "phrases"
+   ]
+  },
+  "p.khorosho": {
+   "ru": "Хорошо́.",
+   "vi": "Được. / Tốt.",
+   "de": "Gut. / Okay.",
+   "en": "Good. / OK.",
+   "ipa": "xərɐˈʂo",
+   "tags": [
+    "phrases"
+   ]
+  },
+  "p.neznayu": {
+   "ru": "Не зна́ю.",
+   "vi": "Tôi không biết.",
+   "de": "Ich weiß nicht.",
+   "en": "I don't know.",
+   "tags": [
+    "phrases"
+   ]
+  },
+  "p.neponimayu": {
+   "ru": "Я не понима́ю.",
+   "vi": "Tôi không hiểu.",
+   "de": "Ich verstehe nicht.",
+   "en": "I don't understand.",
+   "tags": [
+    "phrases"
+   ]
+  },
+  "p.povtorite": {
+   "ru": "Повтори́те, пожа́луйста.",
+   "vi": "Làm ơn nhắc lại.",
+   "de": "Wiederholen Sie bitte.",
+   "en": "Could you repeat, please?",
+   "tags": [
+    "phrases"
+   ]
+  },
+  "p.medlennee": {
+   "ru": "Ме́дленнее, пожа́луйста.",
+   "vi": "Làm ơn nói chậm hơn.",
+   "de": "Langsamer, bitte.",
+   "en": "Slower, please.",
+   "tags": [
+    "phrases"
+   ]
+  },
+  "p.nichego": {
+   "ru": "Ничего́.",
+   "vi": "Không sao.",
+   "de": "Macht nichts.",
+   "en": "That's all right.",
+   "ipa": "nʲɪtɕɪˈvo",
+   "note": "г ở đây đọc [v].",
+   "tags": [
+    "phrases"
+   ]
+  },
+  "p.ponyatno": {
+   "ru": "Поня́тно.",
+   "vi": "Hiểu rồi.",
+   "de": "Verstanden.",
+   "en": "I see.",
+   "tags": [
+    "phrases"
+   ]
+  },
+  "w.bank": {
+   "ru": "банк",
+   "vi": "ngân hàng",
+   "tags": [
+    "letters3"
+   ]
+  }
+ },
+ "parts": [
+  {
+   "id": "A",
+   "title": "Nhóm 3 và 5, ghép vần, dấu cứng và dấu mềm",
+   "minutes": 30,
+   "steps": [
+    {
+     "type": "video",
+     "videoId": "fdzOjmirnQA",
+     "start": 428,
+     "end": 792,
+     "title": "Andrei – Tập 01: ghép vần, dấu cứng và dấu mềm",
+     "note": "Đoạn 7:08–13:12: thầy ghép vần ма́ма, сын, ба́бушка, лес, мя́со, мо́ре… và so sánh брат / брать, сесть / съесть."
+    },
+    {
+     "type": "letters",
+     "title": "Nhóm 3: hình lạ, âm quen",
+     "letters": [
+      {
+       "ch": "Б б",
+       "snd": "[b]",
+       "hint": "Như b.",
+       "words": [
+        "w.bank",
+        "w.spasibo"
+       ]
+      },
+      {
+       "ch": "Г г",
+       "snd": "[g]",
+       "hint": "Như g, bật mạnh hơn g tiếng Việt (thầy Andrei). Hình giống gamma.",
+       "cmp": "greek",
+       "words": [
+        "w.gazeta",
+        "w.drug"
+       ]
+      },
+      {
+       "ch": "Д д",
+       "snd": "[d]",
+       "hint": "Như đ. Hình giống delta.",
+       "words": [
+        "w.da",
+        "w.drug"
+       ]
+      },
+      {
+       "ch": "З з",
+       "snd": "[z]",
+       "hint": "Như s trong Sonne. Cuối từ đọc [s].",
+       "cmp": "z_s",
+       "words": [
+        "w.gazeta"
+       ]
+      },
+      {
+       "ch": "И и",
+       "snd": "[i]",
+       "hint": "Như i. Làm phụ âm đứng trước mềm đi.",
+       "words": [
+        "w.imya",
+        "w.privet"
+       ]
+      },
+      {
+       "ch": "Л л",
+       "snd": "[l]",
+       "hint": "Л cứng đọc tối, lưỡi lùi sâu (gần l trong full tiếng Anh). Ль mềm, như trong лес. Hình giống lambda.",
+       "words": [
+        "w.les"
+       ]
+      },
+      {
+       "ch": "П п",
+       "snd": "[p]",
+       "hint": "Như p, không bật hơi. Hình giống pi.",
+       "words": [
+        "w.papa",
+        "w.spasibo"
+       ]
+      },
+      {
+       "ch": "Ф ф",
+       "snd": "[f]",
+       "hint": "Như ph. Hình giống phi.",
+       "words": [
+        "w.kafe"
+       ]
+      },
+      {
+       "ch": "Э э",
+       "snd": "[e]",
+       "hint": "Như e, không làm phụ âm mềm.",
+       "words": [
+        "w.eto"
+       ]
+      },
+      {
+       "ch": "Я я",
+       "snd": "[ja]",
+       "hint": "= й + а: \"ja\" như tiếng Đức.",
+       "cmp": "ya",
+       "words": [
+        "w.ya",
+        "w.myaso"
+       ]
+      },
+      {
+       "ch": "Ю ю",
+       "snd": "[ju]",
+       "hint": "= й + у: \"ju\".",
+       "cmp": "ya",
+       "words": [
+        "w.yug"
+       ]
+      },
+      {
+       "ch": "Ё ё",
+       "snd": "[jo]",
+       "hint": "= й + о. Luôn mang trọng âm.",
+       "cmp": "ya",
+       "words": [
+        "w.yolka"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "letters",
+     "title": "Nhóm 5: dấu mềm và dấu cứng",
+     "intro": "Hai dấu này không có âm riêng.",
+     "letters": [
+      {
+       "ch": "Ь ь",
+       "snd": "dấu mềm",
+       "hint": "Làm phụ âm đứng trước mềm đi: брат (anh em) / брать (lấy).",
+       "cmp": "soft",
+       "words": [
+        "w.brat",
+        "w.brat2",
+        "w.den",
+        "w.pyat"
+       ]
+      },
+      {
+       "ch": "Ъ ъ",
+       "snd": "dấu cứng",
+       "hint": "Tách phụ âm với я/е/ё/ю phía sau, nên nghe rõ [j]: сесть / съесть.",
+       "words": [
+        "w.sest",
+        "w.sjest",
+        "w.podjezd"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "compare",
+     "title": "So sánh với tiếng Đức, tiếng Anh",
+     "ids": [
+      "greek",
+      "ya",
+      "z_s",
+      "soft"
+     ]
+    },
+    {
+     "type": "quiz",
+     "title": "Nghe và chọn",
+     "questions": [
+      {
+       "kind": "listen",
+       "say": "брать",
+       "options": [
+        "брат",
+        "брать"
+       ],
+       "answer": 1,
+       "item": "w.brat2",
+       "tag": "soft"
+      },
+      {
+       "kind": "listen",
+       "say": "брат",
+       "options": [
+        "брат",
+        "брать"
+       ],
+       "answer": 0,
+       "item": "w.brat",
+       "tag": "soft"
+      },
+      {
+       "kind": "listen",
+       "say": "съесть",
+       "options": [
+        "сесть",
+        "съесть"
+       ],
+       "answer": 1,
+       "item": "w.sjest",
+       "tag": "hard-sign"
+      },
+      {
+       "kind": "listen",
+       "say": "газе́та",
+       "options": [
+        "газе́та",
+        "кафе́",
+        "мя́со"
+       ],
+       "answer": 0,
+       "item": "w.gazeta"
+      },
+      {
+       "kind": "listen",
+       "say": "ёлка",
+       "options": [
+        "юг",
+        "ёлка",
+        "я"
+       ],
+       "answer": 1,
+       "item": "w.yolka"
+      }
+     ]
+    },
+    {
+     "type": "quiz",
+     "title": "Đọc và chọn nghĩa",
+     "questions": [
+      {
+       "kind": "read",
+       "show": "мо́ре",
+       "options": [
+        "biển",
+        "thịt",
+        "rừng"
+       ],
+       "answer": 0,
+       "item": "w.more"
+      },
+      {
+       "kind": "read",
+       "show": "и́мя",
+       "options": [
+        "tôi",
+        "tên",
+        "bố"
+       ],
+       "answer": 1,
+       "item": "w.imya"
+      },
+      {
+       "kind": "read",
+       "show": "друг",
+       "options": [
+        "phía nam",
+        "tờ báo",
+        "bạn"
+       ],
+       "answer": 2,
+       "item": "w.drug"
+      },
+      {
+       "kind": "read",
+       "show": "день",
+       "options": [
+        "ngày",
+        "mẹ",
+        "năm (số 5)"
+       ],
+       "answer": 0,
+       "item": "w.den"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "title": "Nhóm 4 và các lưu ý phát âm",
+   "minutes": 30,
+   "steps": [
+    {
+     "type": "video",
+     "videoId": "fdzOjmirnQA",
+     "start": 792,
+     "end": 1148,
+     "title": "Andrei – Tập 01: ba lưu ý phát âm",
+     "note": "Đoạn 13:12–19:08: (1) д, т, н mềm trước я, е, ё, ю, и, ь; (2) жи, ши, ци đọc thành ы; (3) о không trọng âm đọc gần a."
+    },
+    {
+     "type": "letters",
+     "title": "Nhóm 4: âm khó với người Việt",
+     "letters": [
+      {
+       "ch": "Ж ж",
+       "snd": "[ʐ]",
+       "hint": "ш hữu thanh, luôn cứng: жена́ đọc [ʐɨˈna].",
+       "cmp": "zh",
+       "words": [
+        "w.zhena"
+       ]
+      },
+      {
+       "ch": "Ш ш",
+       "snd": "[ʂ]",
+       "hint": "Như \"s\" nặng tiếng Việt (thầy Andrei), luôn cứng.",
+       "cmp": "sh",
+       "words": [
+        "w.shkola",
+        "w.khorosho",
+        "w.shirokiy"
+       ]
+      },
+      {
+       "ch": "Щ щ",
+       "snd": "[ɕː]",
+       "hint": "ш mềm và dài.",
+       "cmp": "shch",
+       "words": [
+        "w.shchuka",
+        "w.borshch"
+       ]
+      },
+      {
+       "ch": "Ц ц",
+       "snd": "[ts]",
+       "hint": "t + s đọc liền, luôn cứng.",
+       "cmp": "ts",
+       "words": [
+        "w.ulitsa",
+        "w.tsirk"
+       ]
+      },
+      {
+       "ch": "Ч ч",
+       "snd": "[tɕ]",
+       "hint": "Luôn mềm.",
+       "cmp": "ch",
+       "words": [
+        "w.chay"
+       ]
+      },
+      {
+       "ch": "Ы ы",
+       "snd": "[ɨ]",
+       "hint": "Gần \"ư\", lưỡi lùi sâu hơn.",
+       "cmp": "y",
+       "words": [
+        "w.vy",
+        "w.my",
+        "w.syr"
+       ]
+      },
+      {
+       "ch": "Й й",
+       "snd": "[j]",
+       "hint": "Là PHỤ ÂM (thầy Andrei nhấn mạnh), không phải nguyên âm i ngắn.",
+       "words": [
+        "w.moy",
+        "w.chay"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "title": "Ba lưu ý của thầy Andrei",
+     "md": "**1. д, т, н trước я, е, ё, ю, и, ь thì mềm** (thực ra mọi phụ âm có cặp cứng–mềm đều vậy; д, т, н nghe rõ nhất). нь gần \"nh\" (Nha Trang), ть gần \"ch\" nhẹ của tiếng Việt.\n\n**2. жи, ши, ци đọc thành ы:** {ru:широ́кий} [ʂɨ], {ru:цирк} [tsɨ].\n\n**3. о chỉ đọc o khi mang trọng âm.** Không trọng âm đọc gần a: {ru:молоко́}, {ru:хорошо́}, {ru:го́род}. Liền trước trọng âm đọc a rõ, xa hơn thì nhẹ hơn."
+    },
+    {
+     "type": "video",
+     "videoId": "XnBgsudFKus",
+     "start": 0,
+     "title": "Wossow – Bài 6: phụ âm cuối từ",
+     "note": "Phụ âm hữu thanh ở cuối từ đọc thành vô thanh: год → [got], друг → [druk]. Người biết tiếng Đức đã quen hiện tượng này (Auslautverhärtung)."
+    },
+    {
+     "type": "compare",
+     "title": "So sánh với tiếng Đức, tiếng Anh",
+     "ids": [
+      "devoice",
+      "reduce",
+      "soft",
+      "sh",
+      "zh",
+      "ch",
+      "shch",
+      "y",
+      "ts"
+     ]
+    },
+    {
+     "type": "quiz",
+     "title": "Phát âm",
+     "questions": [
+      {
+       "kind": "text",
+       "prompt": "{ru:год} — âm cuối đọc là:",
+       "options": [
+        "[d]",
+        "[t]",
+        "không đọc"
+       ],
+       "answer": 1,
+       "tag": "devoice"
+      },
+      {
+       "kind": "text",
+       "prompt": "{ru:молоко́} — chữ o nào đọc rõ là o?",
+       "options": [
+        "chữ o thứ nhất",
+        "chữ o thứ hai",
+        "chữ o cuối (mang trọng âm)"
+       ],
+       "answer": 2,
+       "tag": "reduce"
+      },
+      {
+       "kind": "text",
+       "prompt": "{ru:жена́} — же đọc gần:",
+       "options": [
+        "[ʐɨ]",
+        "[ʒe] mềm",
+        "[ʒi]"
+       ],
+       "answer": 0,
+       "tag": "letter:Ж"
+      },
+      {
+       "kind": "text",
+       "prompt": "Chữ **й** là:",
+       "options": [
+        "nguyên âm i ngắn",
+        "phụ âm [j]",
+        "dấu mềm"
+       ],
+       "answer": 1,
+       "tag": "letter:Й"
+      },
+      {
+       "kind": "listen",
+       "say": "щу́ка",
+       "options": [
+        "шко́ла",
+        "щу́ка",
+        "сыр"
+       ],
+       "answer": 1,
+       "item": "w.shchuka",
+       "tag": "letter:Щ"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "title": "Câu cửa miệng và kiểm tra đọc",
+   "minutes": 30,
+   "steps": [
+    {
+     "type": "video",
+     "videoId": "7Vpi7clCE8w",
+     "start": 0,
+     "title": "Thầy Tony – Bài 04: 5 câu cửa miệng",
+     "note": "Video dài 28 phút. Câu then chốt bên dưới do app soạn theo chủ đề; bấm \"Báo lỗi nội dung\" nếu thầy dạy câu quan trọng mà app chưa có."
+    },
+    {
+     "type": "phrases",
+     "title": "Câu then chốt: sống sót khi chưa hiểu",
+     "intro": "Những câu giúp anh giữ được cuộc nói chuyện khi chưa nghe kịp.",
+     "items": [
+      "p.da",
+      "p.net",
+      "p.konechno",
+      "p.khorosho",
+      "p.neznayu",
+      "p.neponimayu",
+      "p.povtorite",
+      "p.medlennee",
+      "p.nichego",
+      "p.ponyatno"
+     ]
+    },
+    {
+     "type": "shadow",
+     "title": "Shadowing 3 bước",
+     "items": [
+      "p.neponimayu",
+      "p.povtorite",
+      "p.medlennee",
+      "p.konechno"
+     ]
+    },
+    {
+     "type": "readcheck",
+     "title": "Mốc: đọc 20 từ",
+     "intro": "Đọc to từng từ, rồi bấm \"Nghe mẫu\" để so. Tự chấm thật lòng: đúng cả âm lẫn trọng âm mới tính. Đạt khoảng 18/20 là sẵn sàng sang chủ đề 3 (app chỉ gợi ý, không khóa bài).",
+     "items": [
+      "w.mama",
+      "w.net",
+      "w.moskva",
+      "w.restoran",
+      "w.sestra",
+      "w.utro",
+      "w.papa",
+      "w.spasibo",
+      "w.privet",
+      "w.gazeta",
+      "w.yolka",
+      "w.yug",
+      "w.khorosho",
+      "w.chay",
+      "w.vy",
+      "w.shkola",
+      "w.ulitsa",
+      "w.borshch",
+      "w.den",
+      "w.podjezd"
+     ]
+    },
+    {
+     "type": "type",
+     "title": "Gõ chữ Kirin",
+     "questions": [
+      {
+       "say": "да",
+       "answer": "да",
+       "vi": "vâng",
+       "item": "w.da"
+      },
+      {
+       "say": "чай",
+       "answer": "чай",
+       "vi": "trà",
+       "item": "w.chay"
+      },
+      {
+       "say": "хорошо́",
+       "answer": "хорошо́",
+       "vi": "tốt",
+       "item": "w.khorosho"
+      },
+      {
+       "say": "Не зна́ю.",
+       "answer": "Не зна́ю.",
+       "vi": "Tôi không biết.",
+       "item": "p.neznayu"
+      },
+      {
+       "say": "Я не понима́ю.",
+       "answer": "Я не понима́ю.",
+       "vi": "Tôi không hiểu.",
+       "item": "p.neponimayu"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

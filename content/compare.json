@@ -1,0 +1,245 @@
+{
+ "_note": "Hộp so sánh Nga – Đức – Anh. Nhãn: same = giống, partial = giống một phần, diff = khác, trap = bẫy, na = không áp dụng. Nguồn: tài liệu 'Liên kết Nga – Đức – Anh' (đã qua 2 lượt kiểm tra).",
+ "items": {
+  "greek": {
+   "ru": "Г Д Л П Р Ф",
+   "vi": "Một số chữ Kirin bắt nguồn từ chữ Hy Lạp: Г (gamma), Д (delta), Л (lambda), П (pi), Р (rho, đọc [r]), Ф (phi). Mẹo nhớ hình chữ.",
+   "de": "Γ Δ Λ Π Ρ Φ (như ký hiệu toán học)",
+   "en": "Γ Δ Λ Π Ρ Φ",
+   "label_de": "same",
+   "label_en": "same"
+  },
+  "ya": {
+   "ru": "я, ю, ё, е — ở đầu từ / sau nguyên âm",
+   "vi": "Đọc ja, ju, jo, je như tiếng Đức. Й = j tiếng Đức: {ru:май} = Mai. Sau phụ âm thì KHÔNG có [j], chỉ làm phụ âm trước mềm đi: {ru:нет} [nʲet], không phải \"njet\". Ё luôn mang trọng âm.",
+   "de": "ja, ju, jo, je; Mai",
+   "en": "ya, yu, yo, ye",
+   "label_de": "partial",
+   "label_en": "partial"
+  },
+  "v": {
+   "ru": "В",
+   "vi": "[v] như w trong Wasser (không phải b, không phải w tiếng Anh).",
+   "de": "Wasser",
+   "en": "very",
+   "label_de": "same",
+   "label_en": "same"
+  },
+  "z_s": {
+   "ru": "З / С",
+   "vi": "З = [z] như s trong Sonne (chuẩn miền Bắc Đức); cuối từ đọc [s]: {ru:раз} [ras]. С = [s], không bao giờ thành [z] giữa hai nguyên âm (khác lesen); trước phụ âm hữu thanh thì thành [z]: {ru:сде́лать}.",
+   "de": "Sonne / ß",
+   "en": "zoo / sun",
+   "label_de": "partial",
+   "label_en": "partial"
+  },
+  "ts": {
+   "ru": "Ц",
+   "vi": "[ts] như z trong Zeit, như ts trong cats. Luôn cứng.",
+   "de": "Zeit",
+   "en": "cats",
+   "label_de": "same",
+   "label_en": "same"
+  },
+  "kh": {
+   "ru": "Х",
+   "vi": "[x] như ach-Laut (Bach, acht). Trước е, и mềm hơn, gần ich-Laut nhưng không hoàn toàn.",
+   "de": "Bach, acht",
+   "en": "(không có; như loch tiếng Scotland)",
+   "label_de": "same",
+   "label_en": "diff"
+  },
+  "sh": {
+   "ru": "Ш",
+   "vi": "Gần sch tiếng Đức nhưng lưỡi lùi sâu hơn, ít tròn môi hơn. Luôn cứng: {ru:ши} đọc [ʂɨ].",
+   "de": "sch",
+   "en": "sh",
+   "label_de": "partial",
+   "label_en": "partial"
+  },
+  "zh": {
+   "ru": "Ж",
+   "vi": "Ш hữu thanh. Gần âm đầu của Journalist, Genie (từ mượn tiếng Pháp, đọc [ʒ]) và s trong measure, nhưng ж cứng hơn. Luôn cứng: {ru:жи} [ʐɨ]; cuối từ đọc [ʂ]: {ru:нож} [noʂ].",
+   "de": "Journalist (âm đầu)",
+   "en": "measure",
+   "label_de": "partial",
+   "label_en": "partial"
+  },
+  "ch": {
+   "ru": "Ч",
+   "vi": "tsch tiếng Đức và ch tiếng Anh đều là [tʃ]; ч [tɕ] mềm hơn, không tròn môi. Bẫy: trong {ru:что}, {ru:коне́чно} đọc [ʂ] (chỉ ở một số từ quy ước).",
+   "de": "tsch (Deutsch)",
+   "en": "cheese",
+   "label_de": "partial",
+   "label_en": "partial"
+  },
+  "shch": {
+   "ru": "Щ",
+   "vi": "[ɕː]: âm dài, mềm. Không có trong tiếng Đức, tiếng Anh. Thầy Andrei: щ = ш mềm (thêm chút âm i).",
+   "de": "—",
+   "en": "—",
+   "label_de": "diff",
+   "label_en": "diff"
+  },
+  "y": {
+   "ru": "Ы",
+   "vi": "[ɨ]: không có trong tiếng Đức, tiếng Anh. Gần với \"ư\" tiếng Việt nhưng lưỡi lùi sâu hơn.",
+   "de": "—",
+   "en": "—",
+   "label_de": "diff",
+   "label_en": "diff"
+  },
+  "r": {
+   "ru": "Р",
+   "vi": "Âm cần luyện: rung đầu lưỡi [r] như Zungen-R vùng Bayern. Khi nói nhanh hay gặp biến thể chạm một lần [ɾ]. KHÔNG dùng R lưỡi gà [ʁ] của tiếng Đức chuẩn, cũng không dùng r tiếng Anh.",
+   "de": "R lưỡi gà = sai",
+   "en": "r tiếng Anh = sai",
+   "label_de": "trap",
+   "label_en": "trap"
+  },
+  "soft": {
+   "ru": "Phụ âm cứng / mềm",
+   "vi": "Tiếng Đức, tiếng Anh không có hệ thống phụ âm cứng–mềm đối lập. Thầy Andrei: нь gần \"nh\", ть gần \"ch\" nhẹ của tiếng Việt.",
+   "de": "—",
+   "en": "—",
+   "label_de": "diff",
+   "label_en": "diff"
+  },
+  "devoice": {
+   "ru": "Phụ âm hữu thanh cuối từ",
+   "vi": "Đọc thành vô thanh: {ru:год} [got], {ru:хлеб} [xlʲep], {ru:друг} [druk]. Giống hệt Auslautverhärtung.",
+   "de": "Tag [taːk], Hund [hʊnt]",
+   "en": "(không có)",
+   "label_de": "same",
+   "label_en": "diff"
+  },
+  "reduce": {
+   "ru": "Nhược hóa nguyên âm",
+   "vi": "Theo chuẩn văn học: о không trọng âm đọc [ɐ] ở âm tiết ngay trước trọng âm và đầu từ, [ə] ở chỗ khác: {ru:молоко́} [məlɐˈko]. Gần nguyên âm yếu tiếng Anh (about) hơn tiếng Đức.",
+   "de": "o không bao giờ yếu",
+   "en": "about",
+   "label_de": "diff",
+   "label_en": "partial"
+  },
+  "stress": {
+   "ru": "Trọng âm",
+   "vi": "Tự do, di động, không viết ra trong sách báo thường — phải học theo từng từ. App luôn đánh dấu trọng âm (chữ đỏ).",
+   "de": "dễ đoán hơn",
+   "en": "cũng tự do",
+   "label_de": "diff",
+   "label_en": "partial"
+  },
+  "question": {
+   "ru": "Câu hỏi có/không",
+   "vi": "Không đảo trật tự từ: {ru:Вы студе́нт?} Giọng lên cao ở âm tiết nhấn của từ được hỏi rồi hạ xuống (ИК-3).",
+   "de": "Sind Sie Student?",
+   "en": "Are you a student?",
+   "label_de": "diff",
+   "label_en": "diff"
+  },
+  "pozhaluysta": {
+   "ru": "пожа́луйста",
+   "vi": "= bitte, đủ 3 nghĩa: làm ơn / không có gì / đây ạ. Chữ й trong từ này thường không đọc: [pɐˈʐaləstə]. Bẫy: Wie bitte? KHÔNG phải {ru:пожа́луйста} mà là {ru:Что?} / {ru:Прости́те?}",
+   "de": "bitte",
+   "en": "please / you're welcome",
+   "label_de": "same",
+   "label_en": "partial"
+  },
+  "ty_vy": {
+   "ru": "ты / вы",
+   "vi": "= du / Sie; вы còn là số nhiều (= ihr). Вы viết hoa trong thư lịch sự như Sie.",
+   "de": "du / Sie / ihr",
+   "en": "you",
+   "label_de": "same",
+   "label_en": "diff"
+  },
+  "zdravstvuyte": {
+   "ru": "Здра́вствуйте / Приве́т",
+   "vi": "~ Guten Tag / Hallo. Chữ в đầu tiên câm: [ˈzdrastvʊjtʲɪ]. Với ты nói {ru:Здра́вствуй}.",
+   "de": "Guten Tag / Hallo",
+   "en": "Hello / Hi",
+   "label_de": "same",
+   "label_en": "same"
+  },
+  "kak_dela": {
+   "ru": "Как дела́?",
+   "vi": "Là câu hỏi thật (khác How are you? xã giao) — nên trả lời: {ru:Хорошо́} / {ru:Норма́льно}. Câu này mang sắc thái thân mật; với người anh gọi bằng вы thường nói {ru:Как у вас дела́?}",
+   "de": "Wie geht's?",
+   "en": "How are you?",
+   "label_de": "partial",
+   "label_en": "partial"
+  },
+  "no_article": {
+   "ru": "Không có mạo từ",
+   "vi": "Không có der/die/das, a/the.",
+   "de": "der/die/das, ein",
+   "en": "a/the",
+   "label_de": "diff",
+   "label_en": "diff"
+  },
+  "no_copula": {
+   "ru": "Я студе́нт.",
+   "vi": "Thì hiện tại bỏ \"là\". Quá khứ/tương lai thì có: {ru:я был студе́нтом}.",
+   "de": "Ich bin Student.",
+   "en": "I am a student.",
+   "label_de": "diff",
+   "label_en": "diff"
+  },
+  "otkuda": {
+   "ru": "Отку́да вы? — Я из Вьетна́ма.",
+   "vi": "Cấu trúc khớp: из + cách 2.",
+   "de": "Woher kommen Sie? — Ich komme aus Vietnam.",
+   "en": "Where are you from? — I'm from Vietnam.",
+   "label_de": "same",
+   "label_en": "same"
+  },
+  "po_russki": {
+   "ru": "Я говорю́ по-ру́сски.",
+   "vi": "Sau говори́ть dùng trạng từ по-ру́сски, по-неме́цки, không dùng danh từ. So sánh: {ru:Я изуча́ю ру́сский язы́к}.",
+   "de": "Ich spreche Russisch.",
+   "en": "I speak Russian.",
+   "label_de": "partial",
+   "label_en": "partial"
+  },
+  "menya_zovut": {
+   "ru": "Меня́ зову́т…",
+   "vi": "Nghĩa như Ich heiße…, nhưng cấu trúc là \"người ta gọi tôi là…\" (меня́ ở cách 4).",
+   "de": "Ich heiße…",
+   "en": "My name is…",
+   "label_de": "partial",
+   "label_en": "partial"
+  },
+  "name_patronymic": {
+   "ru": "А́нна Петро́вна + вы",
+   "vi": "Gọi lịch sự bằng tên + tên đệm theo cha.",
+   "de": "Frau Petrova + Sie",
+   "en": "Mrs Petrova",
+   "label_de": "diff",
+   "label_en": "diff"
+  },
+  "gender3": {
+   "ru": "3 giống: đực / cái / trung",
+   "vi": "Như tiếng Đức, nhưng đoán theo đuôi: phụ âm → đực; -а/-я → cái; -о/-е → trung; -ь phải học riêng. Ngoại lệ: {ru:па́па}, {ru:дя́дя}, {ru:мужчи́на} giống đực; đuôi -мя giống trung ({ru:и́мя}, {ru:вре́мя}).",
+   "de": "der / die / das",
+   "en": "(không có giống ngữ pháp)",
+   "label_de": "partial",
+   "label_en": "diff"
+  },
+  "gender_transfer": {
+   "ru": "Giống từng từ",
+   "vi": "Thường khác tiếng Đức: {ru:де́вочка} (cái) / das Mädchen; {ru:со́лнце} (trung) / die Sonne; {ru:луна́} (cái) / der Mond. Không chuyển giống từ tiếng Đức sang.",
+   "de": "das Mädchen, die Sonne, der Mond",
+   "en": "—",
+   "label_de": "trap",
+   "label_en": "na"
+  },
+  "family_roots": {
+   "ru": "мать, брат, сестра́, дочь, сын",
+   "vi": "Cùng gốc Ấn–Âu — mẹo nhớ. Lưu ý {ru:мать}, {ru:дочь} biến đổi bất quy tắc (cách 2: {ru:ма́тери}, {ru:до́чери}).",
+   "de": "Mutter, Bruder, Schwester, Tochter, Sohn",
+   "en": "mother, brother, sister, daughter, son",
+   "label_de": "same",
+   "label_en": "same"
+  }
+ }
+}
