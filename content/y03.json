@@ -506,7 +506,7 @@
        "ch": "Щ щ",
        "snd": "[ɕː]",
        "pic": "🐑",
-       "hint": "sh mềm như trong **sheep**: lưỡi nâng sát vòm.",
+       "hint": "sh mềm và kéo dài, như trong **sheep** nhưng lưỡi nâng cao hơn, sát vòm.",
        "cmp": "shch",
        "words": [
         "w.shchi"
@@ -573,7 +573,7 @@
     {
      "type": "syllables",
      "title": "Đọc âm tiết",
-     "intro": "Hàng 1–2: жи, ши, ци đọc thành ы. Hàng 3–5: so sánh cứng / mềm (ма – мя, му – мю…).",
+     "intro": "Hàng 2: ци, жи, ши đọc thành [ɨ] (nhưng щи đọc [i]). Hàng 3: ш cứng – щ mềm. Hàng 4–5: cứng / mềm (ма – мя, су – сю…). Hàng 6: luyện âm ы.",
      "rows": [
       [
        "ха",
@@ -584,6 +584,7 @@
        "ца",
        "цо",
        "ци",
+       "жи",
        "ши",
        "щи"
       ],
@@ -794,7 +795,7 @@
        "vi": "Còn đây là tôi.",
        "answer": "А э́то я.",
        "extra": [
-        "мой"
+        "твой"
        ]
       }
      ]
