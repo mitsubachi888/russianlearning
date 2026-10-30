@@ -1,0 +1,138 @@
+{
+  "id": "y02",
+  "title": "Chào hỏi lịch sự · 11 chữ tiếp",
+  "items": {
+    "p.zdravstvuyte": { "ru": "Здра́вствуйте!", "pic": "🤝", "vi": "Xin chào! (lịch sự)", "en": "Hello! (formal)", "de": "Guten Tag!", "ipa": "ˈzdrastvʊjtʲɪ", "note": "Chữ в đầu tiên không đọc. Dùng với người lạ, người lớn tuổi, thầy cô, cấp trên.", "tags": ["greet"] },
+    "p.khorosho_avas": { "ru": "Хорошо́. А у вас?", "pic": "🙂", "vi": "Tốt. Còn anh/chị?", "en": "Fine. And you? (formal)", "de": "Gut. Und Ihnen?", "note": "А у вас? = lịch sự (вы); А у тебя́? = thân mật (ты).", "tags": ["greet"] },
+    "p.otlichno_spasibo": { "ru": "Отли́чно, спаси́бо.", "pic": "😄", "vi": "Rất tốt, cảm ơn.", "en": "Excellent, thank you.", "de": "Sehr gut, danke.", "tags": ["greet"] },
+    "p.spasibo": { "ru": "Спаси́бо!", "pic": "🙏", "vi": "Cảm ơn!", "en": "Thank you!", "de": "Danke!", "tags": ["greet"] },
+    "p.dosvidaniya": { "ru": "До свида́ния!", "pic": "🚪", "vi": "Tạm biệt! (lịch sự)", "en": "Goodbye! (formal)", "de": "Auf Wiedersehen!", "ipa": "də svʲɪˈdanʲɪjə", "tags": ["greet"] },
+
+    "w.mama": { "ru": "ма́ма", "pic": "👩", "vi": "mẹ", "en": "mum", "tags": ["read2"] },
+    "w.papa": { "ru": "па́па", "pic": "👨", "vi": "bố", "en": "dad", "tags": ["read2"] },
+    "w.brat": { "ru": "брат", "pic": "👦", "vi": "anh/em trai", "en": "brother", "tags": ["read2"] },
+    "w.sestra": { "ru": "сестра́", "pic": "👧", "vi": "chị/em gái", "en": "sister", "tags": ["read2"] },
+    "w.nos": { "ru": "нос", "pic": "👃", "vi": "cái mũi", "en": "nose", "tags": ["read2"] },
+    "w.kot": { "ru": "кот", "pic": "🐈", "vi": "con mèo (đực)", "en": "cat", "tags": ["read2"] },
+    "w.sup": { "ru": "суп", "pic": "🍲", "vi": "súp, canh", "en": "soup", "tags": ["read2"] },
+    "w.tort": { "ru": "торт", "pic": "🎂", "vi": "bánh ga-tô", "en": "cake", "tags": ["read2"] },
+    "w.lampa": { "ru": "ла́мпа", "pic": "💡", "vi": "cái đèn", "en": "lamp", "tags": ["read2"] },
+    "w.ruka": { "ru": "рука́", "pic": "✋", "vi": "bàn tay, cánh tay", "en": "hand, arm", "tags": ["read2"] },
+    "w.moloko": { "ru": "молоко́", "pic": "🥛", "vi": "sữa", "en": "milk", "ipa": "məlɐˈko", "note": "Chỉ chữ о mang trọng âm đọc rõ \"o\"; hai chữ о kia đọc nhẹ gần \"a/ơ\".", "tags": ["read2"] },
+    "w.banan": { "ru": "бана́н", "pic": "🍌", "vi": "quả chuối", "en": "banana", "tags": ["read2"] },
+    "w.taksi": { "ru": "такси́", "pic": "🚕", "vi": "taxi", "en": "taxi", "tags": ["read2"] },
+    "w.metro": { "ru": "метро́", "pic": "🚇", "vi": "tàu điện ngầm", "en": "metro", "tags": ["read2"] },
+    "w.park": { "ru": "парк", "pic": "🏞️", "vi": "công viên", "en": "park", "tags": ["read2"] },
+    "w.foto": { "ru": "фо́то", "pic": "📷", "vi": "ảnh", "en": "photo", "tags": ["read2"] }
+  },
+  "parts": [
+    {
+      "id": "A",
+      "title": "Hội thoại lịch sự",
+      "minutes": 20,
+      "steps": [
+        { "type": "video", "videoId": "qAWoJUXsGQE", "start": 0, "end": 260, "title": "Yula – Lesson 2: hội thoại lịch sự và dịch", "note": "Đoạn 0:00–4:20. Cô giải thích hai cách xưng hô (ты / вы) và hai cách tạm biệt (До свида́ния / Пока́)." },
+        { "type": "dialogue", "title": "Hội thoại",
+          "lines": [
+            { "who": "A", "name": "Джон", "item": "p.zdravstvuyte" },
+            { "who": "B", "name": "А́нна Петро́вна", "item": "p.zdravstvuyte" },
+            { "who": "A", "name": "Джон", "item": "p.kakdela" },
+            { "who": "B", "name": "А́нна Петро́вна", "item": "p.khorosho_avas" },
+            { "who": "A", "name": "Джон", "item": "p.otlichno_spasibo" }
+          ] },
+        { "type": "phrases", "title": "Câu then chốt", "items": ["p.zdravstvuyte", "p.khorosho_avas", "p.otlichno_spasibo", "p.spasibo", "p.dosvidaniya", "p.poka"] },
+        { "type": "note", "title": "ты hay вы?", "md": "- **ты**: bạn bè, người cùng tuổi, trẻ em, người thân → {ru:Приве́т!} · {ru:А у тебя́?} · {ru:Пока́!}\n- **вы**: người lạ, người lớn tuổi, thầy cô, cấp trên (và khi nói với nhiều người) → {ru:Здра́вствуйте!} · {ru:А у вас?} · {ru:До свида́ния!}\n\nGiống hệt du / Sie trong tiếng Đức." },
+        { "type": "situation", "title": "Chọn câu đúng tình huống",
+          "questions": [
+            { "prompt": "Gặp giáo sư người Nga lần đầu. Anh nói:", "options": ["Приве́т!", "Здра́вствуйте!", "Пока́!"], "answer": 1, "explain": "Với thầy cô, người lạ: Здра́вствуйте." },
+            { "prompt": "Giáo sư hỏi \"Как дела́?\". Anh đáp và hỏi lại:", "options": ["Хорошо́. А у тебя́?", "Хорошо́. А у вас?", "До свида́ния!"], "answer": 1, "explain": "Với người anh gọi bằng вы: А у вас?" },
+            { "prompt": "Chia tay đồng nghiệp thân cùng tuổi:", "options": ["Пока́!", "До свида́ния!", "Здра́вствуйте!"], "answer": 0, "explain": "Thân mật: Пока́. Lịch sự: До свида́ния." },
+            { "prompt": "Rời văn phòng của sếp:", "options": ["Пока́!", "Приве́т!", "До свида́ния!"], "answer": 2 }
+          ] },
+        { "type": "shadow", "title": "Shadowing 3 bước", "items": ["p.zdravstvuyte", "p.khorosho_avas", "p.otlichno_spasibo", "p.dosvidaniya"] }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "11 chữ tiếp theo và đọc từ",
+      "minutes": 25,
+      "steps": [
+        { "type": "video", "videoId": "qAWoJUXsGQE", "start": 260, "end": 740, "title": "Yula – Lesson 2: К Л М Н О П Р С Т У Ф", "note": "Đoạn 4:20–hết. Chú ý hai điểm cô nhấn mạnh: к, п, т **không bật hơi** như tiếng Anh; р là âm **rung đầu lưỡi** (cô hướng dẫn 2 cách luyện)." },
+        { "type": "letters", "title": "11 chữ: К – Ф",
+          "letters": [
+            { "ch": "К к", "snd": "[k]", "pic": "🌵", "hint": "k như trong **cactus**, nhưng không bật hơi.", "words": ["w.kot", "w.taksi"] },
+            { "ch": "Л л", "snd": "[l]", "pic": "🦁", "hint": "l như trong **lion**. Л cứng đọc \"tối\", lưỡi lùi sâu.", "words": ["w.lampa", "w.moloko"] },
+            { "ch": "М м", "snd": "[m]", "pic": "⛰️", "hint": "m như trong **mountain**.", "words": ["w.mama", "w.metro"] },
+            { "ch": "Н н", "snd": "[n]", "pic": "🥷", "hint": "Không phải H — đọc n như trong **ninja**.", "words": ["w.nos", "w.banan"] },
+            { "ch": "О о", "snd": "[o]", "pic": "🍊", "hint": "o như trong **orange**, môi tròn. Chỉ đọc rõ o khi mang trọng âm.", "cmp": "reduce", "words": ["w.nos", "w.moloko"] },
+            { "ch": "П п", "snd": "[p]", "pic": "🅿️", "hint": "Không phải N — đọc p như trong **parking**, không bật hơi.", "words": ["w.papa", "w.park"] },
+            { "ch": "Р р", "snd": "[r]", "pic": "🌹", "hint": "Không phải P — r rung đầu lưỡi. Mẹo của cô Yula: nói \"đ-đ-đ\" thật nhanh và thổi mạnh hơi.", "cmp": "r", "words": ["w.brat", "w.ruka"] },
+            { "ch": "С с", "snd": "[s]", "pic": "☀️", "hint": "Không phải K — luôn đọc s (như **sun**).", "cmp": "z_s", "words": ["w.sup", "w.sestra"] },
+            { "ch": "Т т", "snd": "[t]", "pic": "🐟", "hint": "t như trong **tuna**, không bật hơi.", "words": ["w.tort", "w.foto"] },
+            { "ch": "У у", "snd": "[u]", "pic": "😮", "hint": "Không phải Y — đọc u như trong **oops**.", "words": ["w.sup", "w.ruka"] },
+            { "ch": "Ф ф", "snd": "[f]", "pic": "🌸", "hint": "f như trong **flower**.", "words": ["w.foto"] }
+          ] },
+        { "type": "compare", "title": "So sánh với tiếng Đức, tiếng Anh", "ids": ["r", "reduce", "greek"] },
+        { "type": "syllables", "title": "Đọc âm tiết", "intro": "Đọc to rồi bấm để nghe. Nhớ: к, п, т không bật hơi; р rung.",
+          "rows": [
+            ["ка", "ко", "ку"],
+            ["ла", "ло", "лу"],
+            ["ма", "мо", "му"],
+            ["на", "но", "ну"],
+            ["па", "по", "пу"],
+            ["ра", "ро", "ру"],
+            ["са", "со", "су"],
+            ["та", "то", "ту"],
+            ["фа", "фо", "фу"]
+          ] },
+        { "type": "picquiz", "title": "Đọc từ, chọn hình",
+          "questions": [
+            { "kind": "word2pic", "item": "w.moloko", "options": ["w.moloko", "w.sup", "w.tort"] },
+            { "kind": "word2pic", "item": "w.sestra", "options": ["w.brat", "w.sestra", "w.mama"] },
+            { "kind": "word2pic", "item": "w.taksi", "options": ["w.metro", "w.park", "w.taksi"] },
+            { "kind": "word2pic", "item": "w.nos", "options": ["w.nos", "w.ruka", "w.kot"] },
+            { "kind": "word2pic", "item": "w.lampa", "options": ["w.foto", "w.lampa", "w.banan"] },
+            { "kind": "word2pic", "item": "w.brat", "options": ["w.papa", "w.brat", "w.sestra"] }
+          ] }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Luyện nói và viết",
+      "minutes": 20,
+      "steps": [
+        { "type": "roleplay", "title": "Đóng vai: gặp giáo viên",
+          "lines": [
+            { "who": "A", "name": "Джон", "item": "p.zdravstvuyte" },
+            { "who": "B", "name": "А́нна Петро́вна", "item": "p.zdravstvuyte" },
+            { "who": "A", "name": "Джон", "item": "p.kakdela" },
+            { "who": "B", "name": "А́нна Петро́вна", "item": "p.khorosho_avas" },
+            { "who": "A", "name": "Джон", "item": "p.otlichno_spasibo" },
+            { "who": "B", "name": "А́нна Петро́вна", "item": "p.dosvidaniya" },
+            { "who": "A", "name": "Джон", "item": "p.dosvidaniya" }
+          ] },
+        { "type": "picquiz", "title": "Nghe và chọn hình",
+          "questions": [
+            { "kind": "listen2pic", "item": "w.banan", "options": ["w.banan", "w.tort", "w.sup"] },
+            { "kind": "listen2pic", "item": "w.kot", "options": ["w.nos", "w.kot", "w.park"] },
+            { "kind": "listen2pic", "item": "w.metro", "options": ["w.taksi", "w.foto", "w.metro"] },
+            { "kind": "listen2pic", "item": "p.dosvidaniya", "options": ["p.zdravstvuyte", "p.dosvidaniya", "p.spasibo"] }
+          ] },
+        { "type": "build", "title": "Bấm ghép câu",
+          "questions": [
+            { "vi": "Tốt. Còn anh/chị? (lịch sự)", "answer": "Хорошо́. А у вас?", "extra": ["тебя́"] },
+            { "vi": "Rất tốt, cảm ơn.", "answer": "Отли́чно, спаси́бо.", "extra": ["пло́хо"] },
+            { "vi": "Mẹ, bố và anh trai.", "answer": "Ма́ма, па́па и брат.", "extra": ["сестра́"] }
+          ] },
+        { "type": "type", "title": "Gõ chữ Kirin (22 chữ đã học)",
+          "questions": [
+            { "say": "ма́ма", "answer": "ма́ма", "vi": "mẹ", "item": "w.mama" },
+            { "say": "брат", "answer": "брат", "vi": "anh/em trai", "item": "w.brat" },
+            { "say": "суп", "answer": "суп", "vi": "súp", "item": "w.sup" },
+            { "say": "такси́", "answer": "такси́", "vi": "taxi", "item": "w.taksi" },
+            { "say": "Спаси́бо!", "answer": "Спаси́бо!", "vi": "Cảm ơn!", "item": "p.spasibo" }
+          ] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,850 @@
+{
+ "id": "y03",
+ "title": "Ảnh gia đình · đủ 33 chữ",
+ "items": {
+  "p.khorosho_spasibo": {
+   "ru": "Хорошо́, спаси́бо.",
+   "pic": "🙂",
+   "vi": "Tốt, cảm ơn.",
+   "en": "Fine, thank you.",
+   "de": "Gut, danke.",
+   "tags": [
+    "family"
+   ]
+  },
+  "p.ogo": {
+   "ru": "Ого́!",
+   "pic": "😮",
+   "vi": "Ồ! Chà!",
+   "en": "Wow!",
+   "de": "Wow!",
+   "note": "Thán từ chỉ ngạc nhiên.",
+   "tags": [
+    "family"
+   ]
+  },
+  "p.tvoyasemya": {
+   "ru": "Э́то твоя́ семья́?",
+   "pic": "🖼️",
+   "vi": "Đây là gia đình bạn à?",
+   "en": "Is this your family?",
+   "de": "Ist das deine Familie?",
+   "note": "Câu hỏi có/không: không đảo trật tự từ, chỉ lên giọng ở từ được hỏi.",
+   "tags": [
+    "family"
+   ]
+  },
+  "p.moypapa": {
+   "ru": "Да. Э́то мой па́па.",
+   "pic": "👨",
+   "vi": "Vâng. Đây là bố tôi.",
+   "en": "Yes. This is my dad.",
+   "de": "Ja. Das ist mein Papa.",
+   "note": "па́па tận cùng -а nhưng chỉ nam giới → giống đực → мой.",
+   "tags": [
+    "family"
+   ]
+  },
+  "p.moyamama": {
+   "ru": "Э́то моя́ ма́ма.",
+   "pic": "👩",
+   "vi": "Đây là mẹ tôi.",
+   "en": "This is my mum.",
+   "de": "Das ist meine Mama.",
+   "note": "моя́: о không trọng âm đọc gần a — [mɐˈja].",
+   "tags": [
+    "family"
+   ]
+  },
+  "p.moybrat": {
+   "ru": "Э́то мой брат.",
+   "pic": "👦",
+   "vi": "Đây là anh/em trai tôi.",
+   "en": "This is my brother.",
+   "de": "Das ist mein Bruder.",
+   "tags": [
+    "family"
+   ]
+  },
+  "p.moyasestra": {
+   "ru": "Э́то моя́ сестра́.",
+   "pic": "👧",
+   "vi": "Đây là chị/em gái tôi.",
+   "en": "This is my sister.",
+   "de": "Das ist meine Schwester.",
+   "tags": [
+    "family"
+   ]
+  },
+  "p.aetoya": {
+   "ru": "А э́то я.",
+   "pic": "🙋",
+   "vi": "Còn đây là tôi.",
+   "en": "And this is me.",
+   "de": "Und das bin ich.",
+   "tags": [
+    "family"
+   ]
+  },
+  "p.moyasobaka": {
+   "ru": "И моя́ соба́ка.",
+   "pic": "🐕",
+   "vi": "Và con chó của tôi.",
+   "en": "And my dog.",
+   "de": "Und mein Hund.",
+   "note": "соба́ка tận cùng -а → giống cái (khác der Hund).",
+   "tags": [
+    "family"
+   ]
+  },
+  "w.mashina": {
+   "ru": "маши́на",
+   "pic": "🚗",
+   "vi": "xe ô tô",
+   "en": "car",
+   "ipa": "mɐˈʂɨnə",
+   "note": "ши đọc [ʂɨ].",
+   "tags": [
+    "read3"
+   ]
+  },
+  "w.semya": {
+   "ru": "семья́",
+   "pic": "👨‍👩‍👧",
+   "vi": "gia đình",
+   "en": "family",
+   "ipa": "sʲɪmʲˈja",
+   "note": "ь tách м và я: nghe rõ [j].",
+   "tags": [
+    "read3"
+   ]
+  },
+  "w.chay": {
+   "ru": "чай",
+   "pic": "🍵",
+   "vi": "trà",
+   "en": "tea",
+   "tags": [
+    "read3"
+   ]
+  },
+  "w.tsirk": {
+   "ru": "цирк",
+   "pic": "🎪",
+   "vi": "rạp xiếc",
+   "en": "circus",
+   "ipa": "tsɨrk",
+   "note": "ци đọc [tsɨ].",
+   "tags": [
+    "read3"
+   ]
+  },
+  "w.shchi": {
+   "ru": "щи",
+   "pic": "🥬",
+   "vi": "súp bắp cải",
+   "en": "cabbage soup",
+   "tags": [
+    "read3"
+   ]
+  },
+  "w.sobaka": {
+   "ru": "соба́ка",
+   "pic": "🐕",
+   "vi": "con chó",
+   "en": "dog",
+   "ipa": "sɐˈbakə",
+   "tags": [
+    "read3"
+   ]
+  },
+  "w.shkola": {
+   "ru": "шко́ла",
+   "pic": "🏫",
+   "vi": "trường học",
+   "en": "school",
+   "tags": [
+    "read3"
+   ]
+  },
+  "w.yubka": {
+   "ru": "ю́бка",
+   "pic": "👗",
+   "vi": "váy",
+   "en": "skirt",
+   "ipa": "ˈjupkə",
+   "note": "б trước к đọc [p].",
+   "tags": [
+    "read3"
+   ]
+  },
+  "w.ryba": {
+   "ru": "ры́ба",
+   "pic": "🐟",
+   "vi": "cá",
+   "en": "fish",
+   "tags": [
+    "read3"
+   ]
+  },
+  "w.khleb": {
+   "ru": "хлеб",
+   "pic": "🍞",
+   "vi": "bánh mì",
+   "en": "bread",
+   "ipa": "xlʲep",
+   "note": "б cuối từ đọc [p].",
+   "tags": [
+    "read3"
+   ]
+  },
+  "w.shokolad": {
+   "ru": "шокола́д",
+   "pic": "🍫",
+   "vi": "sô-cô-la",
+   "en": "chocolate",
+   "ipa": "ʂəkɐˈlat",
+   "tags": [
+    "read3"
+   ]
+  },
+  "w.pitstsa": {
+   "ru": "пи́цца",
+   "pic": "🍕",
+   "vi": "pizza",
+   "en": "pizza",
+   "tags": [
+    "read3"
+   ]
+  },
+  "w.chashka": {
+   "ru": "ча́шка",
+   "pic": "☕",
+   "vi": "cái tách",
+   "en": "cup",
+   "tags": [
+    "read3"
+   ]
+  },
+  "w.eto": {
+   "ru": "э́то",
+   "pic": "👆",
+   "vi": "đây là, đó là",
+   "en": "this (is)",
+   "tags": [
+    "read3"
+   ]
+  }
+ },
+ "parts": [
+  {
+   "id": "A",
+   "title": "Hội thoại: ảnh gia đình",
+   "minutes": 25,
+   "steps": [
+    {
+     "type": "video",
+     "videoId": "Yd3Btqkx6jg",
+     "start": 0,
+     "end": 258,
+     "title": "Yula – Lesson 3: ảnh gia đình, мой / твой",
+     "note": "Đoạn 0:00–4:18. Cô giải thích э́то (\"đây là\") và vì sao có мой / моя́, твой / твоя́."
+    },
+    {
+     "type": "dialogue",
+     "title": "Hội thoại",
+     "lines": [
+      {
+       "who": "A",
+       "name": "Джон",
+       "item": "p.privet"
+      },
+      {
+       "who": "B",
+       "name": "Ка́тя",
+       "item": "p.kakdela"
+      },
+      {
+       "who": "A",
+       "name": "Джон",
+       "item": "p.khorosho_spasibo"
+      },
+      {
+       "who": "B",
+       "name": "Ка́тя",
+       "item": "p.ogo"
+      },
+      {
+       "who": "B",
+       "name": "Ка́тя",
+       "item": "p.tvoyasemya"
+      },
+      {
+       "who": "A",
+       "name": "Джон",
+       "item": "p.moypapa"
+      },
+      {
+       "who": "A",
+       "name": "Джон",
+       "item": "p.moyamama"
+      },
+      {
+       "who": "A",
+       "name": "Джон",
+       "item": "p.moybrat"
+      },
+      {
+       "who": "A",
+       "name": "Джон",
+       "item": "p.moyasestra"
+      },
+      {
+       "who": "A",
+       "name": "Джон",
+       "item": "p.aetoya"
+      },
+      {
+       "who": "A",
+       "name": "Джон",
+       "item": "p.moyasobaka"
+      }
+     ]
+    },
+    {
+     "type": "phrases",
+     "title": "Câu then chốt",
+     "items": [
+      "p.ogo",
+      "p.tvoyasemya",
+      "p.moypapa",
+      "p.moyamama",
+      "p.moybrat",
+      "p.moyasestra",
+      "p.aetoya",
+      "p.moyasobaka"
+     ]
+    },
+    {
+     "type": "note",
+     "title": "мой hay моя́?",
+     "md": "Từ \"của tôi\" đổi theo **giống** của danh từ đi sau:\n\n- giống đực → **мой**, **твой**: {ru:мой па́па}, {ru:мой брат}\n- giống cái → **моя́**, **твоя́**: {ru:моя́ ма́ма}, {ru:моя́ сестра́}, {ru:моя́ соба́ка}\n\nGiống mein / meine trong tiếng Đức. Bẫy: {ru:па́па} tận cùng -а nhưng là giống đực (chỉ nam giới); {ru:соба́ка} là giống cái dù tiếng Đức là der Hund."
+    },
+    {
+     "type": "compare",
+     "title": "So sánh với tiếng Đức, tiếng Anh",
+     "ids": [
+      "gender3",
+      "gender_transfer",
+      "question",
+      "no_article"
+     ]
+    },
+    {
+     "type": "quiz",
+     "title": "мой hay моя́?",
+     "questions": [
+      {
+       "kind": "text",
+       "prompt": "… {ru:па́па} 👨",
+       "options": [
+        "мой",
+        "моя́"
+       ],
+       "answer": 0,
+       "tag": "gender",
+       "explain": "Chỉ nam giới → giống đực, dù tận cùng -а."
+      },
+      {
+       "kind": "text",
+       "prompt": "… {ru:ма́ма} 👩",
+       "options": [
+        "мой",
+        "моя́"
+       ],
+       "answer": 1,
+       "tag": "gender"
+      },
+      {
+       "kind": "text",
+       "prompt": "… {ru:брат} 👦",
+       "options": [
+        "мой",
+        "моя́"
+       ],
+       "answer": 0,
+       "tag": "gender"
+      },
+      {
+       "kind": "text",
+       "prompt": "… {ru:соба́ка} 🐕",
+       "options": [
+        "мой",
+        "моя́"
+       ],
+       "answer": 1,
+       "tag": "gender",
+       "explain": "Tận cùng -а → giống cái."
+      },
+      {
+       "kind": "text",
+       "prompt": "… {ru:маши́на} 🚗",
+       "options": [
+        "мой",
+        "моя́"
+       ],
+       "answer": 1,
+       "tag": "gender"
+      },
+      {
+       "kind": "text",
+       "prompt": "… {ru:кот} 🐈",
+       "options": [
+        "мой",
+        "моя́"
+       ],
+       "answer": 0,
+       "tag": "gender"
+      },
+      {
+       "kind": "text",
+       "prompt": "… {ru:чай} 🍵",
+       "options": [
+        "мой",
+        "моя́"
+       ],
+       "answer": 0,
+       "tag": "gender",
+       "explain": "Tận cùng -й → giống đực."
+      },
+      {
+       "kind": "text",
+       "prompt": "… {ru:семья́} 👨‍👩‍👧",
+       "options": [
+        "мой",
+        "моя́"
+       ],
+       "answer": 1,
+       "tag": "gender"
+      }
+     ]
+    },
+    {
+     "type": "shadow",
+     "title": "Shadowing 3 bước",
+     "items": [
+      "p.tvoyasemya",
+      "p.moypapa",
+      "p.moyamama",
+      "p.moyasestra",
+      "p.moyasobaka"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "title": "11 chữ cuối: đọc được mọi chữ",
+   "minutes": 30,
+   "steps": [
+    {
+     "type": "video",
+     "videoId": "Yd3Btqkx6jg",
+     "start": 258,
+     "end": 980,
+     "title": "Yula – Lesson 3: Х – Я, ш / щ, ю / я",
+     "note": "Đoạn 4:18–hết. Cô so sánh kỹ ш (cứng) và щ (mềm), và cách я, ю làm phụ âm đứng trước mềm đi."
+    },
+    {
+     "type": "letters",
+     "title": "11 chữ cuối: Х – Я",
+     "letters": [
+      {
+       "ch": "Х х",
+       "snd": "[x]",
+       "pic": "😂",
+       "hint": "Không phải X — tiếng cười \"ha-ha\" bật từ họng, như ch trong Bach.",
+       "cmp": "kh",
+       "words": [
+        "w.khleb"
+       ]
+      },
+      {
+       "ch": "Ц ц",
+       "snd": "[ts]",
+       "pic": "🌊",
+       "hint": "ts như trong **tsunami** (= z tiếng Đức). Luôn cứng.",
+       "cmp": "ts",
+       "words": [
+        "w.tsirk",
+        "w.pitstsa"
+       ]
+      },
+      {
+       "ch": "Ч ч",
+       "snd": "[tɕ]",
+       "pic": "👋",
+       "hint": "ch như **ciao** tiếng Ý, luôn mềm.",
+       "cmp": "ch",
+       "words": [
+        "w.chay",
+        "w.chashka"
+       ]
+      },
+      {
+       "ch": "Ш ш",
+       "snd": "[ʂ]",
+       "pic": "🩳",
+       "hint": "sh như trong **shorts**, cứng: lưỡi thả lỏng, thấp.",
+       "cmp": "sh",
+       "words": [
+        "w.shkola",
+        "w.mashina"
+       ]
+      },
+      {
+       "ch": "Щ щ",
+       "snd": "[ɕː]",
+       "pic": "🐑",
+       "hint": "sh mềm như trong **sheep**: lưỡi nâng sát vòm.",
+       "cmp": "shch",
+       "words": [
+        "w.shchi"
+       ]
+      },
+      {
+       "ch": "Ъ ъ",
+       "snd": "dấu cứng",
+       "pic": "🧱",
+       "hint": "Không có âm riêng — cho biết phụ âm trước vẫn cứng. Gặp lại ở bài sau.",
+       "words": []
+      },
+      {
+       "ch": "Ы ы",
+       "snd": "[ɨ]",
+       "pic": "🪓",
+       "hint": "Tiếng thở mệt khi chặt củi. Lưỡi ở vị trí \"u\", môi cười như \"i\".",
+       "cmp": "y",
+       "words": [
+        "w.ryba"
+       ]
+      },
+      {
+       "ch": "Ь ь",
+       "snd": "dấu mềm",
+       "pic": "🪶",
+       "hint": "Không có âm riêng — làm phụ âm đứng trước mềm đi.",
+       "cmp": "soft",
+       "words": [
+        "w.semya"
+       ]
+      },
+      {
+       "ch": "Э э",
+       "snd": "[e]",
+       "pic": "🦌",
+       "hint": "e như trong **elk**.",
+       "words": [
+        "w.eto"
+       ]
+      },
+      {
+       "ch": "Ю ю",
+       "snd": "[ju]",
+       "pic": "👉",
+       "hint": "\"you\" = й + у. Sau phụ âm làm phụ âm mềm đi.",
+       "cmp": "ya",
+       "words": [
+        "w.yubka"
+       ]
+      },
+      {
+       "ch": "Я я",
+       "snd": "[ja]",
+       "pic": "🙋",
+       "hint": "\"ya\" = й + а. Chính nó là một từ: я = tôi.",
+       "cmp": "ya",
+       "words": [
+        "w.semya"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "syllables",
+     "title": "Đọc âm tiết",
+     "intro": "Hàng 1–2: жи, ши, ци đọc thành ы. Hàng 3–5: so sánh cứng / mềm (ма – мя, му – мю…).",
+     "rows": [
+      [
+       "ха",
+       "хо",
+       "ху"
+      ],
+      [
+       "ца",
+       "цо",
+       "ци",
+       "ши",
+       "щи"
+      ],
+      [
+       "ча",
+       "чу",
+       "ша",
+       "ща"
+      ],
+      [
+       "ма",
+       "мя",
+       "му",
+       "мю"
+      ],
+      [
+       "да",
+       "дя",
+       "су",
+       "сю"
+      ],
+      [
+       "ры",
+       "ты",
+       "вы",
+       "мы"
+      ]
+     ]
+    },
+    {
+     "type": "picquiz",
+     "title": "Đọc từ, chọn hình",
+     "questions": [
+      {
+       "kind": "word2pic",
+       "item": "w.mashina",
+       "options": [
+        "w.mashina",
+        "w.shkola",
+        "w.tsirk"
+       ]
+      },
+      {
+       "kind": "word2pic",
+       "item": "w.chashka",
+       "options": [
+        "w.chay",
+        "w.chashka",
+        "w.pitstsa"
+       ]
+      },
+      {
+       "kind": "word2pic",
+       "item": "w.ryba",
+       "options": [
+        "w.khleb",
+        "w.ryba",
+        "w.sobaka"
+       ]
+      },
+      {
+       "kind": "word2pic",
+       "item": "w.yubka",
+       "options": [
+        "w.yubka",
+        "w.semya",
+        "w.shchi"
+       ]
+      },
+      {
+       "kind": "word2pic",
+       "item": "w.shokolad",
+       "options": [
+        "w.pitstsa",
+        "w.khleb",
+        "w.shokolad"
+       ]
+      },
+      {
+       "kind": "word2pic",
+       "item": "w.tsirk",
+       "options": [
+        "w.tsirk",
+        "w.shkola",
+        "w.mashina"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "video",
+     "videoId": "f7mxma-VX4M",
+     "start": 0,
+     "title": "Ôn lại (không bắt buộc): cả bảng chữ trong 6 phút",
+     "note": "Cô Yula ôn cả 33 chữ bằng hình gợi nhớ."
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "title": "Luyện nói và viết",
+   "minutes": 25,
+   "steps": [
+    {
+     "type": "roleplay",
+     "title": "Đóng vai: xem ảnh gia đình",
+     "lines": [
+      {
+       "who": "A",
+       "name": "Ка́тя",
+       "item": "p.ogo"
+      },
+      {
+       "who": "A",
+       "name": "Ка́тя",
+       "item": "p.tvoyasemya"
+      },
+      {
+       "who": "B",
+       "name": "Джон",
+       "item": "p.moypapa"
+      },
+      {
+       "who": "B",
+       "name": "Джон",
+       "item": "p.moyamama"
+      },
+      {
+       "who": "B",
+       "name": "Джон",
+       "item": "p.moyasestra"
+      },
+      {
+       "who": "B",
+       "name": "Джон",
+       "item": "p.aetoya"
+      }
+     ]
+    },
+    {
+     "type": "picquiz",
+     "title": "Nghe và chọn hình",
+     "questions": [
+      {
+       "kind": "listen2pic",
+       "item": "w.semya",
+       "options": [
+        "w.semya",
+        "w.sobaka",
+        "w.shkola"
+       ]
+      },
+      {
+       "kind": "listen2pic",
+       "item": "w.chay",
+       "options": [
+        "w.shchi",
+        "w.chay",
+        "w.ryba"
+       ]
+      },
+      {
+       "kind": "listen2pic",
+       "item": "p.moyasestra",
+       "options": [
+        "p.moybrat",
+        "p.moyamama",
+        "p.moyasestra"
+       ]
+      },
+      {
+       "kind": "listen2pic",
+       "item": "w.khleb",
+       "options": [
+        "w.khleb",
+        "w.shokolad",
+        "w.pitstsa"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "build",
+     "title": "Bấm ghép câu",
+     "questions": [
+      {
+       "vi": "Đây là mẹ tôi.",
+       "answer": "Э́то моя́ ма́ма.",
+       "extra": [
+        "мой"
+       ]
+      },
+      {
+       "vi": "Đây là con chó của bạn à?",
+       "answer": "Э́то твоя́ соба́ка?",
+       "extra": [
+        "твой"
+       ]
+      },
+      {
+       "vi": "Vâng, đây là anh trai tôi.",
+       "answer": "Да, э́то мой брат.",
+       "extra": [
+        "моя́"
+       ]
+      },
+      {
+       "vi": "Còn đây là tôi.",
+       "answer": "А э́то я.",
+       "extra": [
+        "мой"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "type",
+     "title": "Gõ chữ Kirin (đủ 33 chữ)",
+     "questions": [
+      {
+       "say": "чай",
+       "answer": "чай",
+       "vi": "trà",
+       "item": "w.chay"
+      },
+      {
+       "say": "семья́",
+       "answer": "семья́",
+       "vi": "gia đình",
+       "item": "w.semya"
+      },
+      {
+       "say": "маши́на",
+       "answer": "маши́на",
+       "vi": "xe ô tô",
+       "item": "w.mashina"
+      },
+      {
+       "say": "Э́то моя́ ма́ма.",
+       "answer": "Э́то моя́ ма́ма.",
+       "vi": "Đây là mẹ tôi.",
+       "item": "p.moyamama"
+      }
+     ]
+    },
+    {
+     "type": "write",
+     "title": "Viết: giới thiệu ảnh gia đình",
+     "prompt": "Tưởng tượng anh đang cho bạn xem một tấm ảnh gia đình. Viết 4–6 câu bằng mẫu Э́то мой … / Э́то моя́ … (có thể thêm con vật, xe, nhà…).",
+     "minWords": 10,
+     "checklist": [
+      "Dùng Э́то + мой / моя́",
+      "мой với giống đực, моя́ với giống cái",
+      "Có câu А э́то я.",
+      "Viết hoa đầu câu, có dấu chấm"
+     ],
+     "model": "Э́то моя́ семья́. Э́то мой па́па. Э́то моя́ ма́ма. Э́то мой брат и моя́ сестра́. А э́то я. И моя́ соба́ка.",
+     "level": "A1 (bài 3 của khóa Yula)",
+     "task": "Giới thiệu ảnh gia đình"
+    }
+   ]
+  }
+ ]
+}

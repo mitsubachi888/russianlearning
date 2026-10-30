@@ -3,7 +3,7 @@ import * as store from "./store.js";
 import { ensureCard, grade, exerciseResult, dueCards, stats } from "./srs.js";
 import { speak, Recorder, russianVoices, ttsAvailable } from "./speech.js";
 
-const APP_VERSION = "0.2.0";
+const APP_VERSION = "0.3.0";
 
 // iOS Safari sometimes still zooms on fast double taps outside buttons; block that gesture only.
 let lastTouchEnd = 0;
@@ -113,7 +113,7 @@ function compareCard(id) {
 
 function errorLabel(tag) {
   if (tag.startsWith("letter:")) return `Chữ ${tag.slice(7)}`;
-  return ({ soft: "Phụ âm mềm / dấu mềm", "hard-sign": "Dấu cứng", devoice: "Phụ âm cuối từ", reduce: "Nhược hóa nguyên âm o", gender: "Giống của danh từ", typing: "Chính tả khi gõ" })[tag] || tag;
+  return ({ soft: "Phụ âm mềm / dấu mềm", "hard-sign": "Dấu cứng", devoice: "Phụ âm cuối từ", reduce: "Nhược hóa nguyên âm o", gender: "Giống của danh từ", typing: "Chính tả khi gõ", "word-order": "Trật tự từ khi ghép câu" })[tag] || tag;
 }
 
 /* ---------- progress helpers ---------- */
@@ -213,7 +213,7 @@ function renderHome() {
     const heroText = np.meta.hero;
     const long = [...heroText.replace(/́/g, "")].length > 10;
     const hero = h(`<section class="card raised hero">
-      <div class="kick"><span class="lb">${np.meta.n}</span>Chủ đề ${np.meta.n} · ${esc(np.meta.title)}</div>
+      <div class="kick"><span class="lb">${np.meta.n}</span>Bài ${np.meta.n} · ${esc(np.meta.title)}</div>
       <div class="word ru${long ? " long" : ""}">${ru(heroText)}</div>
       <div class="gloss">${esc(np.meta.gloss)}</div>
       <a class="cta" href="#/l/${np.meta.id}/${np.part.id}"><span>Học tiếp phần ${np.part.id}<small>${esc(np.part.title)} · ${np.part.minutes || 20} phút</small></span><span class="go" aria-hidden="true">▶</span></a>
@@ -223,7 +223,7 @@ function renderHome() {
       hero.before(h(`<div class="banner">Anh nghỉ ${gap} ngày rồi. Nên ôn nhanh ${Math.min(st.due, 10)} thẻ (khoảng 5 phút) trước khi học tiếp.</div>`));
     }
   } else {
-    stack.append(h(`<section class="card raised hero"><div class="word ru">${ru("Молоде́ц!")}</div><div class="gloss">Anh đã xong các chủ đề hiện có. Nội dung mới sẽ được bổ sung.</div></section>`));
+    stack.append(h(`<section class="card raised hero"><div class="word ru">${ru("Молоде́ц!")}</div><div class="gloss">Anh đã xong các bài hiện có. Nội dung mới sẽ được bổ sung.</div></section>`));
   }
 
   stack.append(st.due
@@ -264,9 +264,9 @@ function renderPath() {
   const np = nextPart();
   const doneCount = course.topics.filter(t => topics[t.id] && topicDone(t.id)).length;
   const el = h(`<div></div>`);
-  el.append(band({ title: "Lộ trình", greet: "Học theo tiến độ", pill: `${doneCount}/12 chủ đề`, short: true }));
+  el.append(band({ title: "Lộ trình", greet: "Khóa của cô Yula", pill: `${doneCount}/${course.topics.length} bài`, short: true }));
   const stack = h(`<div class="stack"></div>`);
-  stack.append(h(`<p class="small muted">Có thể nhảy chủ đề — app chỉ nhắc nếu kiến thức nền còn thiếu.</p>`));
+  stack.append(h(`<p class="small muted">Có thể nhảy bài — app chỉ nhắc nếu kiến thức nền còn thiếu.</p>`));
   const map = h(`<div class="map"></div>`);
   course.topics.forEach(t => map.append(stopEl(t, { current: np && np.meta.id === t.id, withParts: true })));
   stack.append(map);
@@ -296,9 +296,9 @@ function renderLesson(tid, pid, stepIdx) {
       <div class="progress" aria-label="Tiến độ phần học"><i style="width:${Math.round(((stepIdx) / part.steps.length) * 100)}%"></i></div>
       <button class="btn ghost small" type="button" data-report aria-label="Báo lỗi nội dung">⚑</button>
     </div></div>`);
-  top.querySelector("[data-report]").addEventListener("click", () => reportModal(`Chủ đề ${meta.n} · Phần ${pid} · Bước ${stepIdx + 1}: ${step.title || step.type}`));
+  top.querySelector("[data-report]").addEventListener("click", () => reportModal(`Bài ${meta.n} · Phần ${pid} · Bước ${stepIdx + 1}: ${step.title || step.type}`));
   view.append(top);
-  if (missing.length && stepIdx === 0) view.append(h(`<div class="banner info small">Gợi ý: chủ đề ${missing.join(", ")} chưa xong. Học tiếp vẫn được — chỉ là có thể gặp kiến thức chưa học.</div>`));
+  if (missing.length && stepIdx === 0) view.append(h(`<div class="banner info small">Gợi ý: bài ${missing.join(", ")} chưa xong. Học tiếp vẫn được — chỉ là có thể gặp kiến thức chưa học.</div>`));
   setLine(tid);
   view.append(h(`<div class="step-head"><span class="lb">${meta.n}</span><span class="step-kicker">Phần ${pid} · ${esc(part.title)} · bước ${stepIdx + 1}/${part.steps.length}</span></div>`));
   view.append(h(`<h2 class="step-title">${esc(step.title || "")}</h2>`));
@@ -335,7 +335,7 @@ function finishPart(meta, part) {
     <p>Các câu và từ trong phần này đã vào thẻ ôn tập.</p>
     <div class="hero-actions"></div></div>`);
   const acts = el.querySelector(".hero-actions");
-  if (np) acts.append(h(`<a class="btn primary block" href="#/l/${np.meta.id}/${np.part.id}">Học tiếp: chủ đề ${np.meta.n}, phần ${np.part.id}</a>`));
+  if (np) acts.append(h(`<a class="btn primary block" href="#/l/${np.meta.id}/${np.part.id}">Học tiếp: bài ${np.meta.n}, phần ${np.part.id}</a>`));
   acts.append(h(`<a class="btn block" href="#/review">Ôn tập</a>`));
   acts.append(h(`<a class="btn ghost block" href="#/">Về trang chính</a>`));
   const close = modal(el);
@@ -386,7 +386,7 @@ STEP.phrases = (s, body) => {
   for (const id of s.items) {
     const it = items[id]; if (!it) continue;
     ensureCard(id);
-    const row = h(`<div class="phrase"><div class="txt">
+    const row = h(`<div class="phrase">${it.pic ? `<div class="ph-pic" aria-hidden="true">${it.pic}</div>` : ""}<div class="txt">
         <div>${ruBlock(it.ru)}</div>${translitLine(it.ru)}
         ${it.ipa ? `<div class="small muted">[${esc(it.ipa)}]</div>` : ""}
         <div class="vi">${esc(it.vi)}</div>
@@ -405,7 +405,7 @@ STEP.letters = (s, body) => {
   let openDetail = null;
   s.letters.forEach(L => {
     L.words.forEach(w => ensureCard(w));
-    const btn = h(`<button class="letter" type="button" aria-expanded="false"><div class="big">${esc(L.ch)}</div><div class="snd">${esc(L.snd)}</div></button>`);
+    const btn = h(`<button class="letter" type="button" aria-expanded="false">${L.pic ? `<span class="l-pic" aria-hidden="true">${L.pic}</span>` : ""}<div class="big">${esc(L.ch)}</div><div class="snd">${esc(L.snd)}</div></button>`);
     btn.addEventListener("click", () => {
       const was = btn.getAttribute("aria-expanded") === "true";
       grid.querySelectorAll(".letter").forEach(b => b.setAttribute("aria-expanded", "false"));
@@ -416,7 +416,7 @@ STEP.letters = (s, body) => {
       const wbox = d.querySelector(".words");
       L.words.forEach(w => {
         const it = items[w]; if (!it) return;
-        const chip = h(`<span class="word-chip">${ruBlock(it.ru)}<span class="small muted">${esc(it.vi)}</span></span>`);
+        const chip = h(`<span class="word-chip">${it.pic ? `<span aria-hidden="true">${it.pic}</span>` : ""}${ruBlock(it.ru)}<span class="small muted">${esc(it.vi)}</span></span>`);
         chip.append(playBtn(it.ru, { label: it.ru }));
         wbox.append(chip);
       });
@@ -630,12 +630,12 @@ STEP.readcheck = (s, body) => {
     if (vals.length === s.items.length) {
       const n = vals.filter(Boolean).length;
       store.logEvent("readcheck", s.title, { right: n, total: s.items.length });
-      score.append(h(`<p class="${n >= Math.round(s.items.length * 0.9) ? "" : "muted"}">${n >= Math.round(s.items.length * 0.9) ? "Đạt mốc — sẵn sàng sang chủ đề tiếp theo." : "Chưa đạt 90% — nên xem lại các từ bị sai, nhưng vẫn có thể học tiếp."}</p>`));
+      score.append(h(`<p class="${n >= Math.round(s.items.length * 0.9) ? "" : "muted"}">${n >= Math.round(s.items.length * 0.9) ? "Đạt mốc — sẵn sàng sang bài tiếp theo." : "Chưa đạt 90% — nên xem lại các từ bị sai, nhưng vẫn có thể học tiếp."}</p>`));
     }
   };
   s.items.forEach(id => {
     const it = items[id]; if (!it) return;
-    const row = h(`<div class="phrase"><div class="txt"><div>${ruBlock(it.ru)}</div><div class="hidden-info" hidden>${translitLine(it.ru)}<div class="small">${esc(it.vi)}</div></div></div><div class="btns row" style="flex-wrap:nowrap"></div></div>`);
+    const row = h(`<div class="phrase">${it.pic ? `<div class="ph-pic" aria-hidden="true">${it.pic}</div>` : ""}<div class="txt"><div>${ruBlock(it.ru)}</div><div class="hidden-info" hidden>${translitLine(it.ru)}<div class="small">${esc(it.vi)}</div></div></div><div class="btns row" style="flex-wrap:nowrap"></div></div>`);
     const listen = h(`<button class="btn small" type="button">Nghe mẫu</button>`);
     listen.addEventListener("click", () => { speak(it.ru); row.querySelector(".hidden-info").hidden = false; });
     const ok = h(`<button class="iconbtn" type="button" aria-label="Đọc đúng">✓</button>`);
@@ -709,6 +709,217 @@ STEP.write = (s, body, ctx) => {
   });
 };
 
+/* ---------- dialogue, role-play, picture quiz, sentence building, syllables ---------- */
+// speak, then call cb once — with a fallback timer in case the device never fires onend
+function speakThen(text, cb) {
+  let done = false;
+  const fire = () => { if (!done) { done = true; clearTimeout(t); cb(); } };
+  const t = setTimeout(fire, 2500 + String(text).length * 110);
+  speak(text, { onend: fire });
+}
+function lineItem(l) { return items[l.item] || { ru: l.ru || "", vi: l.vi || "" }; }
+
+STEP.dialogue = (s, body) => {
+  if (s.intro) body.append(h(`<p class="muted">${esc(s.intro)}</p>`));
+  const wrap = h(`<div class="chat"></div>`);
+  let token = 0;
+  const rows = s.lines.map((l, k) => {
+    const it = lineItem(l);
+    if (l.item) ensureCard(l.item);
+    const row = h(`<button type="button" class="bubble ${l.who === "A" ? "left" : "right"}">
+        <span class="who">${ru(l.name || l.who)}</span>
+        <span class="b-ru">${it.pic ? `<span class="pic" aria-hidden="true">${it.pic}</span>` : ""}${ru(it.ru)}</span>
+        ${translitLine(it.ru)}
+        <span class="b-vi">${esc(it.vi)}</span>
+      </button>`);
+    row.addEventListener("click", () => { token++; mark(k); speak(it.ru); });
+    wrap.append(row);
+    return row;
+  });
+  const mark = k => rows.forEach((r, j) => r.classList.toggle("on", j === k));
+  const playAll = () => {
+    const my = ++token;
+    const next = k => {
+      if (my !== token) return;
+      if (k >= s.lines.length) { mark(-1); return; }
+      mark(k); rows[k].scrollIntoView({ block: "nearest", behavior: "smooth" });
+      speakThen(lineItem(s.lines[k]).ru, () => setTimeout(() => next(k + 1), 500));
+    };
+    next(0);
+  };
+  const bar = h(`<div class="row" style="margin:6px 0 12px"></div>`);
+  const all = h(`<button class="btn primary" type="button">▶ Nghe cả hội thoại</button>`);
+  all.addEventListener("click", playAll);
+  const hideVi = h(`<button class="btn small" type="button">Ẩn nghĩa</button>`);
+  hideVi.addEventListener("click", () => { wrap.classList.toggle("no-vi"); hideVi.textContent = wrap.classList.contains("no-vi") ? "Hiện nghĩa" : "Ẩn nghĩa"; });
+  bar.append(all, hideVi);
+  body.append(bar, wrap);
+  cleanup.push(() => { token++; });
+};
+
+STEP.roleplay = (s, body) => {
+  const roles = [...new Set(s.lines.map(l => l.who))];
+  const nameOf = w => s.lines.find(l => l.who === w)?.name || w;
+  if (s.intro) body.append(h(`<p class="muted">${esc(s.intro)}</p>`));
+  const pick = h(`<div class="card"><p><b>Anh muốn đóng vai ai?</b></p><div class="row"></div><p class="small muted" style="margin-bottom:0">Câu của anh hiện dưới dạng gợi ý (ẩn bớt chữ). Nói to, ghi âm nếu muốn, rồi bấm "Câu tiếp".</p></div>`);
+  roles.forEach(r => {
+    const b = h(`<button class="btn primary" type="button">${ru(nameOf(r))}</button>`);
+    b.addEventListener("click", () => run(r));
+    pick.querySelector(".row").append(b);
+  });
+  const stage = h(`<div></div>`);
+  body.append(pick, stage);
+  let token = 0;
+  const run = me => {
+    pick.hidden = true;
+    stage.innerHTML = "";
+    const chat = h(`<div class="chat"></div>`);
+    stage.append(chat);
+    const ctrl = h(`<div></div>`);
+    stage.append(ctrl);
+    const my = ++token;
+    const step = k => {
+      if (my !== token) return;
+      ctrl.innerHTML = "";
+      if (k >= s.lines.length) {
+        ctrl.append(h(`<div class="card result"><div class="score">✓</div><p><b>Xong vai ${ru(nameOf(me))}</b></p></div>`));
+        const row = h(`<div class="btn-col"></div>`);
+        const other = roles.find(r => r !== me);
+        if (other) { const b = h(`<button class="btn primary block" type="button">Đổi vai: ${ru(nameOf(other))}</button>`); b.addEventListener("click", () => run(other)); row.append(b); }
+        const again = h(`<button class="btn block" type="button">Làm lại</button>`); again.addEventListener("click", () => run(me)); row.append(again);
+        ctrl.append(row);
+        store.logEvent("roleplay_completed", s.title, { role: me });
+        return;
+      }
+      const l = s.lines[k];
+      const it = lineItem(l);
+      if (l.who !== me) {
+        chat.append(h(`<div class="bubble ${l.who === roles[0] ? "left" : "right"} on"><span class="who">${ru(l.name)}</span><span class="b-ru">${it.pic ? `<span class="pic">${it.pic}</span>` : ""}${ru(it.ru)}</span><span class="b-vi">${esc(it.vi)}</span></div>`));
+        chat.lastElementChild.scrollIntoView({ block: "nearest", behavior: "smooth" });
+        speakThen(it.ru, () => setTimeout(() => step(k + 1), 450));
+        ctrl.append(h(`<p class="small muted">${ru(l.name)} đang nói…</p>`));
+        const skip = h(`<button class="btn small" type="button">Bỏ qua</button>`); skip.addEventListener("click", () => { try { speechSynthesis.cancel(); } catch (_) { step(k + 1); } }); ctrl.append(skip);
+      } else {
+        const card = h(`<div class="shadow-card"><div class="small muted">Lượt của anh · ${esc(it.vi)}</div><div class="shadow-line">${hintLine(it.ru, 2)}</div></div>`);
+        card.append(recorderUI());
+        const r = h(`<div class="row" style="margin-top:6px"></div>`);
+        const reveal = h(`<button class="btn" type="button">Hiện câu + nghe mẫu</button>`);
+        reveal.addEventListener("click", () => { card.querySelector(".shadow-line").innerHTML = ru(it.ru); speak(it.ru); });
+        const next = h(`<button class="btn primary" type="button">Câu tiếp</button>`);
+        next.addEventListener("click", () => {
+          chat.append(h(`<div class="bubble ${l.who === roles[0] ? "left" : "right"} mine"><span class="who">${ru(l.name)} (anh)</span><span class="b-ru">${ru(it.ru)}</span></div>`));
+          step(k + 1);
+        });
+        r.append(reveal, next); card.append(r);
+        ctrl.append(card);
+      }
+    };
+    step(0);
+  };
+  cleanup.push(() => { token++; });
+};
+
+STEP.picquiz = (s, body) => {
+  quizRunner(s, body, {
+    renderQ: (q, box, done) => {
+      const target = items[q.item];
+      const opts = q.options.map(id => items[id]).filter(Boolean);
+      const answer = q.options.indexOf(q.item);
+      if (q.kind === "word2pic") {
+        box.append(h(`<div class="q-prompt"><p>Từ này nghĩa là gì? Chọn hình.</p>${ruBlock(target.ru)}</div>`));
+      } else {
+        box.append(h(`<div class="q-prompt"><p>Nghe rồi chọn hình đúng.</p></div>`));
+        const row = h(`<div class="row"></div>`);
+        const big = playBtn(target.ru); big.classList.add("big");
+        row.append(big, playBtn(target.ru, { slow: true }));
+        box.querySelector(".q-prompt").append(row);
+        setTimeout(() => speak(target.ru), 250);
+      }
+      const grid = h(`<div class="picgrid"></div>`);
+      const order = shuffle(opts.map((_, k) => k));
+      order.forEach(k => {
+        const o = opts[k];
+        const b = h(`<button class="picopt" type="button" aria-label="${esc(o.vi)}"><span class="pic">${o.pic || "❓"}</span><span class="small muted">${esc(o.vi)}</span></button>`);
+        b.addEventListener("click", () => {
+          grid.querySelectorAll(".picopt").forEach(x => (x.disabled = true));
+          const ok = k === answer;
+          b.classList.add(ok ? "correct" : "wrong");
+          if (!ok) [...grid.children][order.indexOf(answer)].classList.add("correct");
+          box.append(h(`<div class="feedback ${ok ? "ok" : "bad"}">${ok ? "Đúng." : "Chưa đúng."} <span style="color:var(--ink)">${ruBlock(target.ru)} — ${esc(target.vi)}</span></div>`));
+          speak(target.ru);
+          done(ok);
+        });
+        grid.append(b);
+      });
+      box.append(grid);
+    },
+    onAnswer: (q, ok) => { exerciseResult(q.item, ok); store.logEvent("answered", q.item, { ok, kind: q.kind }); }
+  });
+};
+
+function tilesOf(sentence) {
+  return sentence.normalize("NFC").split(/\s+/).filter(Boolean);
+}
+
+STEP.build = (s, body) => {
+  if (s.intro) body.append(h(`<p class="muted">${esc(s.intro)}</p>`));
+  quizRunner(s, body, {
+    renderQ: (q, box, done) => {
+      box.append(h(`<div class="q-prompt"><p>Ghép câu tiếng Nga:</p><h3>${esc(q.vi)}</h3></div>`));
+      const target = tilesOf(q.answer);
+      const pool = shuffle([...target, ...(q.extra || [])]);
+      const line = h(`<div class="build-line" aria-label="Câu đang ghép"></div>`);
+      const tray = h(`<div class="tray"></div>`);
+      const chosen = [];
+      const render = () => {
+        line.innerHTML = chosen.length ? "" : `<span class="muted small">Bấm các thẻ bên dưới…</span>`;
+        chosen.forEach((ti, pos) => {
+          const t = h(`<button type="button" class="tile on">${ru(pool[ti])}</button>`);
+          t.addEventListener("click", () => { chosen.splice(pos, 1); render(); });
+          line.append(t);
+        });
+        tray.querySelectorAll(".tile").forEach(t => { t.disabled = chosen.includes(Number(t.dataset.i)); });
+      };
+      pool.forEach((w, i) => {
+        const t = h(`<button type="button" class="tile" data-i="${i}">${ru(w)}</button>`);
+        t.addEventListener("click", () => { chosen.push(i); render(); });
+        tray.append(t);
+      });
+      const check = h(`<button class="btn primary block" type="button" style="margin-top:12px">Kiểm tra</button>`);
+      box.append(line, tray, check);
+      render();
+      check.addEventListener("click", () => {
+        if (!chosen.length) { toast("Anh bấm chọn thẻ trước đã."); return; }
+        const given = chosen.map(i => pool[i]).join(" ");
+        const ok = norm(given) === norm(q.answer);
+        check.remove();
+        tray.querySelectorAll(".tile").forEach(t => (t.disabled = true));
+        line.querySelectorAll(".tile").forEach(t => (t.disabled = true));
+        box.append(h(`<div class="feedback ${ok ? "ok" : "bad"}">${ok ? "Đúng." : "Chưa đúng."}<div style="margin-top:6px;color:var(--ink)">${ruBlock(q.answer)}</div>${q.note ? `<div class="small" style="margin-top:6px;color:var(--ink)">${esc(q.note)}</div>` : ""}</div>`));
+        speak(q.answer);
+        done(ok);
+      });
+    },
+    onAnswer: (q, ok) => { if (!ok) store.addError("word-order"); store.logEvent("built", q.answer, { ok }); }
+  });
+};
+
+STEP.syllables = (s, body) => {
+  if (s.intro) body.append(h(`<p class="muted">${esc(s.intro)}</p>`));
+  const card = h(`<div class="card"></div>`);
+  s.rows.forEach(r => {
+    const row = h(`<div class="syl-row"></div>`);
+    r.forEach(sy => {
+      const b = h(`<button type="button" class="syl ru">${ru(sy)}</button>`);
+      b.addEventListener("click", () => { b.classList.add("heard"); speak(sy, { slow: true }); });
+      row.append(b);
+    });
+    card.append(row);
+  });
+  body.append(card);
+  body.append(h(`<p class="small muted">Giọng máy đọc âm tiết đơn lẻ đôi khi chưa tự nhiên — nghe cô Yula đọc trong video là chuẩn nhất.</p>`));
+};
+
 /* ---------- review ---------- */
 function renderReview() {
   let queue = dueCards(20).filter(id => items[id]);
@@ -732,12 +943,12 @@ function renderReview() {
     setLine(it.topic);
     const c = store.get().srs[id];
     const reverse = c && c.box >= 2 && Math.random() < 0.5;
-    box.append(h(`<div class="small muted">Còn ${queue.length} thẻ · chủ đề ${course.topics.find(t => t.id === it.topic)?.n || ""}</div>`));
+    box.append(h(`<div class="small muted">Còn ${queue.length} thẻ · bài ${course.topics.find(t => t.id === it.topic)?.n || ""}</div>`));
     const card = h(`<div class="card raised flash"></div>`);
     if (reverse) {
-      card.append(h(`<div><div class="small muted">Nói hoặc nghĩ câu tiếng Nga:</div><h2 style="margin:10px 0">${esc(it.vi)}</h2></div>`));
+      card.append(h(`<div>${it.pic ? `<div class="flash-pic">${it.pic}</div>` : ""}<div class="small muted">Nói hoặc nghĩ câu tiếng Nga:</div><h2 style="margin:10px 0">${esc(it.vi)}</h2></div>`));
     } else {
-      card.append(h(`<div>${ruBlock(it.ru)}${translitLine(it.ru)}</div>`));
+      card.append(h(`<div>${it.pic ? `<div class="flash-pic">${it.pic}</div>` : ""}${ruBlock(it.ru)}${translitLine(it.ru)}</div>`));
       const pr = h(`<div class="row" style="justify-content:center;margin-top:10px"></div>`); pr.append(playBtn(it.ru)); card.append(pr);
       setTimeout(() => speak(it.ru), 200);
     }
@@ -795,7 +1006,7 @@ function renderSettings() {
     <div class="panel">
       <button class="btn danger" type="button" data-reset>Xóa toàn bộ tiến độ</button>
     </div>
-    <p class="small muted">Phiên bản ${APP_VERSION}. Video thuộc về các kênh: Russki with Andrei, Easy Russian with Tony, Wossow — app chỉ nhúng, không lưu video.</p>
+    <p class="small muted">Phiên bản ${APP_VERSION}. Video bài học: khóa “The Easiest Russian Course” của cô Yula (kênh @RussianYula) — app chỉ nhúng, không lưu video. Hình minh họa: emoji.</p>
   </div></div>`);
   // voices
   const vs = el.querySelector('[data-k="voiceURI"]');

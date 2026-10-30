@@ -18,10 +18,10 @@ export function russianVoices() {
 
 export function ttsAvailable() { return !!window.speechSynthesis; }
 
-export function speak(text, { slow = false } = {}) {
-  if (!window.speechSynthesis) return false;
+export function speak(text, { slow = false, onend, queue = false } = {}) {
+  if (!window.speechSynthesis) { onend?.(); return false; }
   try {
-    speechSynthesis.cancel();
+    if (!queue) speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(stripStress(text));
     u.lang = "ru-RU";
     const pref = get().settings.voiceURI;
@@ -30,6 +30,7 @@ export function speak(text, { slow = false } = {}) {
     if (v) u.voice = v;
     const base = Number(get().settings.rate) || 0.9;
     u.rate = slow ? Math.max(0.4, base * 0.6) : base;
+    if (onend) { u.onend = () => onend(); u.onerror = () => onend(); }
     speechSynthesis.speak(u);
     return true;
   } catch (e) { return false; }

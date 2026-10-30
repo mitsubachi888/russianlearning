@@ -1,10 +1,10 @@
 // Offline cache: app shell + lesson content. Bump VERSION when files change.
-const VERSION = "ru-v0.2.0";
+const VERSION = "ru-v0.3.0";
 const ASSETS = [
   "./", "index.html", "manifest.webmanifest",
   "css/app.css",
   "js/app.js", "js/text.js", "js/store.js", "js/srs.js", "js/speech.js",
-  "content/course.json", "content/compare.json", "content/t01.json", "content/t02.json", "content/t03.json",
+  "content/course.json", "content/compare.json", "content/y01.json", "content/y02.json", "content/y03.json",
   "fonts/literata-cyrillic-400-normal.woff2", "fonts/literata-cyrillic-600-normal.woff2", "fonts/literata-cyrillic-400-italic.woff2",
   "fonts/literata-latin-400-normal.woff2", "fonts/literata-latin-600-normal.woff2", "fonts/literata-latin-400-italic.woff2",
   "fonts/literata-vietnamese-400-normal.woff2", "fonts/literata-vietnamese-600-normal.woff2",

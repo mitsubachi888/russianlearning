@@ -1,0 +1,120 @@
+{
+  "id": "y01",
+  "title": "Chào hỏi thân mật · 11 chữ đầu",
+  "items": {
+    "p.privet": { "ru": "Приве́т!", "pic": "👋", "vi": "Chào! (thân mật)", "en": "Hi!", "de": "Hallo!", "tags": ["greet"] },
+    "p.kakdela": { "ru": "Как дела́?", "pic": "🤔", "vi": "Dạo này thế nào?", "en": "How are you?", "de": "Wie geht's?", "note": "Nghĩa đen: \"việc thế nào?\". Tiếng Nga không dùng động từ \"là\" ở thì hiện tại.", "tags": ["greet"] },
+    "p.otlichno": { "ru": "Отли́чно! А у тебя́?", "pic": "😄", "vi": "Tuyệt! Còn bạn?", "en": "Excellent! And you?", "de": "Super! Und dir?", "note": "А у тебя́? — nghĩa đen \"còn ở chỗ bạn?\" (thân mật, với ты).", "tags": ["greet"] },
+    "p.khorosho": { "ru": "Хорошо́.", "pic": "🙂", "vi": "Tốt.", "en": "Fine. / Good.", "de": "Gut.", "tags": ["greet"] },
+    "p.normalno": { "ru": "Норма́льно.", "pic": "😐", "vi": "Bình thường.", "en": "OK.", "de": "Geht so.", "tags": ["greet"] },
+    "p.plokho": { "ru": "Пло́хо.", "pic": "🙁", "vi": "Không ổn. / Tệ.", "en": "Bad.", "de": "Schlecht.", "tags": ["greet"] },
+    "p.poka": { "ru": "Пока́!", "pic": "🙋", "vi": "Tạm biệt! (thân mật)", "en": "Bye!", "de": "Tschüss!", "tags": ["greet"] },
+
+    "w.da": { "ru": "да", "pic": "✅", "vi": "vâng, có", "en": "yes", "tags": ["read1"] },
+    "w.dva": { "ru": "два", "pic": "✌️", "vi": "hai", "en": "two", "tags": ["read1"] },
+    "w.gde": { "ru": "где", "pic": "📍", "vi": "ở đâu", "en": "where", "note": "г cứng trước е: [ɡdʲe].", "tags": ["read1"] },
+    "w.zhaba": { "ru": "жа́ба", "pic": "🐸", "vi": "con cóc", "en": "toad", "tags": ["read1"] },
+    "w.yozh": { "ru": "ёж", "pic": "🦔", "vi": "con nhím", "en": "hedgehog", "ipa": "joʂ", "note": "ж cuối từ đọc [ʂ].", "tags": ["read1"] },
+    "w.davay": { "ru": "дава́й", "pic": "🤝", "vi": "nào, cùng làm đi!", "en": "let's / come on", "tags": ["read1"] },
+    "w.vaza": { "ru": "ва́за", "pic": "🏺", "vi": "cái bình", "en": "vase", "tags": ["read1"] },
+    "w.ded": { "ru": "дед", "pic": "👴", "vi": "ông", "en": "grandpa", "ipa": "dʲet", "note": "д cuối từ đọc [t].", "tags": ["read1"] }
+  },
+  "parts": [
+    {
+      "id": "A",
+      "title": "Hội thoại: Как дела?",
+      "minutes": 20,
+      "steps": [
+        { "type": "video", "videoId": "FtCfbxNmkUw", "start": 0, "end": 251, "title": "Yula – Lesson 1: hội thoại và dịch", "note": "Đoạn 0:00–4:11. Lần đầu chỉ nghe cho quen âm, chưa cần đọc chữ — cô Yula cũng dạy hội thoại bằng tai trước." },
+        { "type": "dialogue", "title": "Hội thoại", "intro": "Nghe cả đoạn, rồi bấm vào từng câu để nghe lại.",
+          "lines": [
+            { "who": "A", "name": "Джон", "item": "p.privet" },
+            { "who": "B", "name": "Ка́тя", "item": "p.privet" },
+            { "who": "A", "name": "Джон", "item": "p.kakdela" },
+            { "who": "B", "name": "Ка́тя", "item": "p.otlichno" },
+            { "who": "A", "name": "Джон", "item": "p.khorosho" }
+          ] },
+        { "type": "phrases", "title": "Câu then chốt", "intro": "Trả lời \"Как дела́?\" theo 4 mức, từ tốt nhất đến tệ nhất.", "items": ["p.privet", "p.kakdela", "p.otlichno", "p.khorosho", "p.normalno", "p.plokho", "p.poka"] },
+        { "type": "compare", "title": "So sánh với tiếng Đức, tiếng Anh", "ids": ["kak_dela", "no_copula", "ty_vy"] },
+        { "type": "shadow", "title": "Shadowing 3 bước", "items": ["p.privet", "p.kakdela", "p.otlichno", "p.normalno", "p.poka"] }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "11 chữ đầu và đọc âm tiết",
+      "minutes": 25,
+      "steps": [
+        { "type": "video", "videoId": "FtCfbxNmkUw", "start": 251, "end": 896, "title": "Yula – Lesson 1: 11 chữ đầu, âm tiết, từ", "note": "Đoạn 4:11–hết. Cô dạy âm của chữ (không chỉ tên chữ) bằng hình gợi nhớ, rồi đọc âm tiết và từ." },
+        { "type": "letters", "title": "11 chữ đầu: А – Й",
+          "intro": "Hình gợi nhớ theo gợi ý của cô Yula. Bấm từng chữ để xem từ ví dụ.",
+          "letters": [
+            { "ch": "А а", "snd": "[a]", "pic": "⬆️", "hint": "a như trong **up**. Chỉ có một cách đọc, không như tiếng Anh.", "words": ["w.da", "w.vaza"] },
+            { "ch": "Б б", "snd": "[b]", "pic": "🛢️", "hint": "b như trong **barrel**.", "words": ["w.zhaba"] },
+            { "ch": "В в", "snd": "[v]", "pic": "🎻", "hint": "v như trong **violin** (= w trong Wasser).", "cmp": "v", "words": ["w.dva", "w.vaza"] },
+            { "ch": "Г г", "snd": "[g]", "pic": "🦢", "hint": "g như trong **goose**.", "words": ["w.gde"] },
+            { "ch": "Д д", "snd": "[d]", "pic": "🐉", "hint": "d như trong **dragon**.", "words": ["w.da", "w.ded"] },
+            { "ch": "Е е", "snd": "[je]", "pic": "❄️", "hint": "\"ye\" như trong **yeti / yes**: = й + э. Sau phụ âm thì làm phụ âm mềm đi: где, дед.", "cmp": "ya", "words": ["w.gde", "w.ded"] },
+            { "ch": "Ё ё", "snd": "[jo]", "pic": "🧘", "hint": "\"yo\" như trong **yoga**: = й + о. Luôn mang trọng âm.", "cmp": "ya", "words": ["w.yozh"] },
+            { "ch": "Ж ж", "snd": "[ʐ]", "pic": "🪲", "hint": "Tiếng con bọ bay \"zh-zh\", như âm cuối của **beige**. Luôn cứng.", "cmp": "zh", "words": ["w.zhaba", "w.yozh"] },
+            { "ch": "З з", "snd": "[z]", "pic": "🦟", "hint": "Tiếng muỗi \"zzz\", như trong **season**.", "cmp": "z_s", "words": ["w.vaza"] },
+            { "ch": "И и", "snd": "[i]", "pic": "🇮🇹", "hint": "i như chữ i tiếng Ý.", "words": ["w.davay"] },
+            { "ch": "Й й", "snd": "[j]", "pic": "🎉", "hint": "Như \"yippee\": phụ âm [j], luôn ngắn. Nói \"i\" rồi nâng lưỡi lên vòm.", "words": ["w.davay"] }
+          ] },
+        { "type": "syllables", "title": "Đọc âm tiết", "intro": "Đọc to từng âm tiết, rồi bấm để nghe kiểm tra. Chú ý: е, ё làm phụ âm đứng trước mềm đi (бе, вё).",
+          "rows": [
+            ["ба", "ва", "га", "да", "жа", "за"],
+            ["би", "ви", "ги", "ди", "зи"],
+            ["бе", "ве", "ге", "де", "зе"],
+            ["бё", "вё", "дё", "жё", "зё"]
+          ] },
+        { "type": "picquiz", "title": "Đọc từ, chọn hình",
+          "questions": [
+            { "kind": "word2pic", "item": "w.zhaba", "options": ["w.zhaba", "w.yozh", "w.vaza"] },
+            { "kind": "word2pic", "item": "w.yozh", "options": ["w.ded", "w.yozh", "w.dva"] },
+            { "kind": "word2pic", "item": "w.vaza", "options": ["w.vaza", "w.gde", "w.zhaba"] },
+            { "kind": "word2pic", "item": "w.ded", "options": ["w.dva", "w.da", "w.ded"] },
+            { "kind": "word2pic", "item": "w.dva", "options": ["w.dva", "w.yozh", "w.da"] }
+          ] }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Luyện nói và viết",
+      "minutes": 20,
+      "steps": [
+        { "type": "roleplay", "title": "Đóng vai: chào bạn", "dialogue": "A", "intro": "App đọc lời Джон, anh nói lời Ка́тя (rồi đổi vai). Ghi âm để nghe lại mình.",
+          "lines": [
+            { "who": "A", "name": "Джон", "item": "p.privet" },
+            { "who": "B", "name": "Ка́тя", "item": "p.privet" },
+            { "who": "A", "name": "Джон", "item": "p.kakdela" },
+            { "who": "B", "name": "Ка́тя", "item": "p.otlichno" },
+            { "who": "A", "name": "Джон", "item": "p.khorosho" },
+            { "who": "B", "name": "Ка́тя", "item": "p.poka" }
+          ] },
+        { "type": "picquiz", "title": "Nghe và chọn hình",
+          "questions": [
+            { "kind": "listen2pic", "item": "p.plokho", "options": ["p.otlichno", "p.normalno", "p.plokho"] },
+            { "kind": "listen2pic", "item": "p.otlichno", "options": ["p.otlichno", "p.plokho", "p.poka"] },
+            { "kind": "listen2pic", "item": "w.yozh", "options": ["w.zhaba", "w.yozh", "w.ded"] },
+            { "kind": "listen2pic", "item": "p.poka", "options": ["p.privet", "p.poka", "p.kakdela"] }
+          ] },
+        { "type": "build", "title": "Bấm ghép câu",
+          "intro": "Bấm các thẻ theo đúng thứ tự. Bấm lại thẻ đã chọn để bỏ.",
+          "questions": [
+            { "vi": "Dạo này thế nào?", "answer": "Как дела́?", "extra": ["где"] },
+            { "vi": "Tuyệt! Còn bạn?", "answer": "Отли́чно! А у тебя́?", "extra": ["да"] },
+            { "vi": "Vâng, con nhím ở đâu?", "answer": "Да, где ёж?", "extra": ["два"] }
+          ] },
+        { "type": "type", "title": "Gõ chữ Kirin (chỉ dùng 11 chữ đã học)",
+          "intro": "Cài bàn phím tiếng Nga trên iPhone: Cài đặt → Cài đặt chung → Bàn phím → Bàn phím → Thêm bàn phím mới → Русский. Bấm biểu tượng quả địa cầu để đổi. Không cần gõ dấu trọng âm.",
+          "questions": [
+            { "say": "да", "answer": "да", "vi": "vâng", "item": "w.da" },
+            { "say": "где", "answer": "где", "vi": "ở đâu", "item": "w.gde" },
+            { "say": "ёж", "answer": "ёж", "vi": "con nhím", "item": "w.yozh" },
+            { "say": "ва́за", "answer": "ва́за", "vi": "cái bình", "item": "w.vaza" },
+            { "say": "дава́й", "answer": "дава́й", "vi": "nào, cùng làm đi!", "item": "w.davay" }
+          ] }
+      ]
+    }
+  ]
+}

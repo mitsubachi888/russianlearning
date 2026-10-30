@@ -1,104 +1,208 @@
 {
- "title": "Tiếng Nga giao tiếp — lộ trình 12 chủ đề",
+ "title": "The Easiest Russian Course (Yula) — 25 bài",
  "topics": [
   {
-   "id": "t01",
+   "id": "y01",
    "n": 1,
-   "title": "Chữ cái (1) và câu chào",
-   "hero": "Здра́вствуйте!",
-   "gloss": "Xin chào",
-   "file": "content/t01.json",
-   "color": "#E2333B"
+   "title": "Chào hỏi thân mật · 11 chữ đầu",
+   "hero": "Как дела́?",
+   "gloss": "Dạo này thế nào?",
+   "color": "#E2333B",
+   "file": "content/y01.json"
   },
   {
-   "id": "t02",
+   "id": "y02",
    "n": 2,
-   "title": "Chữ cái (2) và câu cửa miệng",
-   "hero": "Коне́чно!",
-   "gloss": "Tất nhiên!",
-   "file": "content/t02.json",
-   "color": "#F6B800"
+   "title": "Chào hỏi lịch sự · 11 chữ tiếp",
+   "hero": "Здра́вствуйте!",
+   "gloss": "Xin chào!",
+   "color": "#F6B800",
+   "file": "content/y02.json"
   },
   {
-   "id": "t03",
+   "id": "y03",
    "n": 3,
-   "title": "Giới thiệu, làm quen",
-   "hero": "О́чень прия́тно!",
-   "gloss": "Rất vui được gặp",
-   "file": "content/t03.json",
-   "color": "#2E9E4F"
+   "title": "Ảnh gia đình · đủ 33 chữ",
+   "hero": "Э́то моя́ семья́.",
+   "gloss": "Đây là gia đình tôi.",
+   "color": "#2E9E4F",
+   "file": "content/y03.json"
   },
   {
-   "id": "t04",
+   "id": "y04",
    "n": 4,
-   "title": "Chào chia tay, tuổi, số điện thoại",
-   "hero": "Ско́лько вам лет?",
-   "gloss": "Bạn bao nhiêu tuổi?",
+   "title": "Ai đây? Cái gì đây? · nghề nghiệp",
+   "hero": "Кто э́то?",
+   "gloss": "Ai đây?",
    "color": "#1E88E5"
   },
   {
-   "id": "t05",
+   "id": "y05",
    "n": 5,
-   "title": "Gia đình",
-   "hero": "Э́то моя́ семья́.",
-   "gloss": "Đây là gia đình tôi.",
+   "title": "Phụ âm mềm · tên bạn là gì · giống danh từ",
+   "hero": "Как тебя́ зову́т?",
+   "gloss": "Bạn tên là gì?",
    "color": "#8E44AD"
   },
   {
-   "id": "t06",
+   "id": "y06",
    "n": 6,
-   "title": "Sở thích, công việc, một ngày của tôi",
-   "hero": "Я люблю́ чита́ть.",
-   "gloss": "Tôi thích đọc sách.",
+   "title": "Động từ chia kiểu 1",
+   "hero": "Я чита́ю.",
+   "gloss": "Tôi đọc.",
    "color": "#E67E22"
   },
   {
-   "id": "t07",
+   "id": "y07",
    "n": 7,
-   "title": "Sống, làm việc ở đâu",
-   "hero": "Где вы живёте?",
-   "gloss": "Bạn sống ở đâu?",
+   "title": "Động từ chia kiểu 2",
+   "hero": "Я говорю́ по-ру́сски.",
+   "gloss": "Tôi nói tiếng Nga.",
    "color": "#0097A7"
   },
   {
-   "id": "t08",
+   "id": "y08",
    "n": 8,
-   "title": "Đi đâu, đi bằng gì",
-   "hero": "Куда́ вы идёте?",
-   "gloss": "Bạn đi đâu?",
+   "title": "Địa điểm trong thành phố · số nhiều",
+   "hero": "Где банк?",
+   "gloss": "Ngân hàng ở đâu?",
    "color": "#8D6E63"
   },
   {
-   "id": "t09",
+   "id": "y09",
    "n": 9,
-   "title": "Mô tả người, vật",
-   "hero": "Како́й краси́вый дом!",
-   "gloss": "Ngôi nhà đẹp quá!",
+   "title": "Thời gian rảnh · này/kia",
+   "hero": "Я гуля́ю в па́рке.",
+   "gloss": "Tôi đi dạo trong công viên.",
    "color": "#C2185B"
   },
   {
-   "id": "t10",
+   "id": "y10",
    "n": 10,
-   "title": "Giờ, ngày tháng, sinh nhật",
-   "hero": "Кото́рый час?",
-   "gloss": "Mấy giờ rồi?",
+   "title": "Tôi có… · họ hàng",
+   "hero": "У меня́ есть брат.",
+   "gloss": "Tôi có một anh trai.",
    "color": "#7CB342"
   },
   {
-   "id": "t11",
+   "id": "y11",
    "n": 11,
-   "title": "Mẫu câu ngắn và lời chúc",
-   "hero": "С днём рожде́ния!",
-   "gloss": "Chúc mừng sinh nhật!",
+   "title": "Số đếm 0–10",
+   "hero": "Оди́н, два, три!",
+   "gloss": "Một, hai, ba!",
    "color": "#5C6BC0"
   },
   {
-   "id": "t12",
+   "id": "y12",
    "n": 12,
-   "title": "Ôn tổng hợp",
-   "hero": "Молоде́ц!",
-   "gloss": "Giỏi lắm!",
+   "title": "Quốc gia, quốc tịch, ngôn ngữ",
+   "hero": "Отку́да ты?",
+   "gloss": "Bạn từ đâu đến?",
    "color": "#546E7A"
+  },
+  {
+   "id": "y13",
+   "n": 13,
+   "title": "Căn hộ của chúng tôi · đại từ sở hữu",
+   "hero": "Э́то на́ша кварти́ра.",
+   "gloss": "Đây là căn hộ của chúng tôi.",
+   "color": "#E2333B"
+  },
+  {
+   "id": "y14",
+   "n": 14,
+   "title": "Giới thiệu em gái tôi",
+   "hero": "Познако́мься, э́то моя́ сестра́.",
+   "gloss": "Đây là em gái tôi.",
+   "color": "#F6B800"
+  },
+  {
+   "id": "y15",
+   "n": 15,
+   "title": "Số 11–19 · Bạn bao nhiêu tuổi?",
+   "hero": "Ско́лько тебе́ лет?",
+   "gloss": "Bạn bao nhiêu tuổi?",
+   "color": "#2E9E4F"
+  },
+  {
+   "id": "y16",
+   "n": 16,
+   "title": "Thì quá khứ · các mùa",
+   "hero": "Я уже́ был в Москве́.",
+   "gloss": "Tôi đã từng ở Moskva.",
+   "color": "#1E88E5"
+  },
+  {
+   "id": "y17",
+   "n": 17,
+   "title": "Thì tương lai · các ngày trong tuần",
+   "hero": "Что ты бу́дешь де́лать?",
+   "gloss": "Bạn sẽ làm gì?",
+   "color": "#8E44AD"
+  },
+  {
+   "id": "y18",
+   "n": 18,
+   "title": "Cách 6 (giới từ) · phần 1",
+   "hero": "Я живу́ в Карши́.",
+   "gloss": "Tôi sống ở Qarshi.",
+   "color": "#E67E22"
+  },
+  {
+   "id": "y19",
+   "n": 19,
+   "title": "Cách 6 · phần 2 · phương hướng",
+   "hero": "Я на рабо́те.",
+   "gloss": "Tôi đang ở chỗ làm.",
+   "color": "#0097A7"
+  },
+  {
+   "id": "y20",
+   "n": 20,
+   "title": "Kể về thành phố của bạn",
+   "hero": "Мне нра́вится мой го́род.",
+   "gloss": "Tôi thích thành phố của tôi.",
+   "color": "#8D6E63"
+  },
+  {
+   "id": "y21",
+   "n": 21,
+   "title": "Ở đâu? · gọi điện thoại",
+   "hero": "Алло́! Где ты?",
+   "gloss": "Alo! Bạn đang ở đâu?",
+   "color": "#C2185B"
+  },
+  {
+   "id": "y22",
+   "n": 22,
+   "title": "Cách 6 với đuôi -у",
+   "hero": "Я в аэропорту́.",
+   "gloss": "Tôi đang ở sân bay.",
+   "color": "#7CB342"
+  },
+  {
+   "id": "y23",
+   "n": 23,
+   "title": "Tả người · tính từ số ít",
+   "hero": "Он высо́кий и весёлый.",
+   "gloss": "Anh ấy cao và vui tính.",
+   "color": "#5C6BC0"
+  },
+  {
+   "id": "y24",
+   "n": 24,
+   "title": "Tả người · tính từ số nhiều · mắt và tóc",
+   "hero": "У неё голубы́е глаза́.",
+   "gloss": "Cô ấy có mắt xanh.",
+   "color": "#546E7A"
+  },
+  {
+   "id": "y25",
+   "n": 25,
+   "title": "Ở sân bay",
+   "hero": "Ваш па́спорт, пожа́луйста.",
+   "gloss": "Hộ chiếu của anh, làm ơn.",
+   "color": "#E2333B"
   }
  ]
 }
