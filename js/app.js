@@ -3,7 +3,7 @@ import * as store from "./store.js";
 import { ensureCard, grade, exerciseResult, dueCards, stats } from "./srs.js";
 import { speak, Recorder, russianVoices, ttsAvailable } from "./speech.js";
 
-const APP_VERSION = "0.1.1";
+const APP_VERSION = "0.2.0";
 
 // iOS Safari sometimes still zooms on fast double taps outside buttons; block that gesture only.
 let lastTouchEnd = 0;
@@ -69,7 +69,7 @@ function toast(msg) {
 
 function modal(contentEl, { onClose } = {}) {
   const root = document.getElementById("modal-root");
-  const back = h(`<div class="modal-back" role="dialog" aria-modal="true"><div class="modal"></div></div>`);
+  const back = h(`<div class="modal-back" role="dialog" aria-modal="true"><div class="modal"><div class="stripe"></div></div></div>`);
   back.querySelector(".modal").append(contentEl);
   const close = () => { back.remove(); onClose?.(); };
   back.addEventListener("click", e => { if (e.target === back) close(); });
@@ -107,7 +107,7 @@ function compareCard(id) {
     <div class="cmp-ru">${ru(c.ru)}</div>
     <div class="badges">${badge("Đức", c.label_de)}${badge("Anh", c.label_en)}</div>
     <div class="md">${md(c.vi)}</div>
-    <div class="small muted">Đức: ${esc(c.de)} · Anh: ${esc(c.en)}</div>
+    <div class="ex"><b>Đức</b><span>${esc(c.de)}</span><b>Anh</b><span>${esc(c.en)}</span></div>
   </div>`);
 }
 
@@ -154,73 +154,123 @@ function route() {
 }
 
 /* ---------- home ---------- */
+function lineColor(tid) { return course.topics.find(t => t.id === tid)?.color || "#1B3F8F"; }
+function setLine(tid) { document.documentElement.style.setProperty("--lc", lineColor(tid)); }
+
+function streak() {
+  const days = new Set(store.get().days);
+  const d = new Date();
+  const key = x => `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, "0")}-${String(x.getDate()).padStart(2, "0")}`;
+  if (!days.has(key(d))) d.setDate(d.getDate() - 1);
+  let n = 0;
+  while (days.has(key(d))) { n++; d.setDate(d.getDate() - 1); }
+  return n;
+}
+
+function partsDone(tid) { const t = topics[tid]; return t ? t.parts.filter(p => store.partDone(partKey(tid, p.id))).length : 0; }
+
+function band({ greet, title, pill, short = false }) {
+  return h(`<header class="band${short ? " short" : ""}">
+    ${greet ? `<div class="greet">${esc(greet)}</div>` : ""}
+    <div class="title">${esc(title)}</div>
+    ${pill ? `<div class="pill">${esc(pill)}</div>` : ""}
+    <div class="stripe"></div>
+  </header>`);
+}
+
+function stopEl(t, { current, withParts }) {
+  const data = topics[t.id];
+  const done = data && topicDone(t.id);
+  const total = data ? data.parts.length : 3;
+  const node = h(`<div class="stop ${done ? "done" : ""} ${current ? "current" : ""} ${data ? "" : "locked"}" style="--lc:${t.color}">
+      <span class="dot"></span>
+      <div class="t"><b>${t.n}. ${esc(t.title)}</b><span class="ru">${ru(t.hero)}</span><div class="parts"></div></div>
+      <span class="pct">${data ? `${partsDone(t.id)}/${total}` : "sắp có"}</span>
+    </div>`);
+  const parts = node.querySelector(".parts");
+  if (withParts && data) {
+    for (const p of data.parts) {
+      const pd = store.partDone(partKey(t.id, p.id));
+      parts.append(h(`<a class="part-chip ${pd ? "done" : ""}" href="#/l/${t.id}/${p.id}"><span class="mark">${pd ? "✓" : p.id}</span>${esc(p.title)}</a>`));
+    }
+  } else parts.remove();
+  return node;
+}
+
 function renderHome() {
   const np = nextPart();
   const st = stats();
   const s = store.get();
   const gap = store.daysSinceLastStudy();
+  const sk = streak();
   const el = h(`<div></div>`);
+  el.append(band({ greet: `Chào anh ${s.settings.name || ""}`.trim(), title: "Hôm nay học gì?", pill: sk ? `${sk} ngày liên tiếp` : "" }));
+  const stack = h(`<div class="stack"></div>`);
+  el.append(stack);
+
   if (np) {
+    setLine(np.meta.id);
     const heroText = np.meta.hero;
-    el.append(h(`<section class="hero">
-      <div class="where">Chủ đề ${np.meta.n} · ${esc(np.meta.title)}</div>
-      <div class="word ru${[...heroText.replace(/́/g, "")].length > 10 ? " long" : ""}">${ru(heroText)}</div>
+    const long = [...heroText.replace(/́/g, "")].length > 10;
+    const hero = h(`<section class="card raised hero">
+      <div class="kick"><span class="lb">${np.meta.n}</span>Chủ đề ${np.meta.n} · ${esc(np.meta.title)}</div>
+      <div class="word ru${long ? " long" : ""}">${ru(heroText)}</div>
       <div class="gloss">${esc(np.meta.gloss)}</div>
-      <div class="hero-actions"></div>
-    </section>`));
-    const acts = el.querySelector(".hero-actions");
+      <a class="cta" href="#/l/${np.meta.id}/${np.part.id}"><span>Học tiếp phần ${np.part.id}<small>${esc(np.part.title)} · ${np.part.minutes || 20} phút</small></span><span class="go" aria-hidden="true">▶</span></a>
+    </section>`);
+    stack.append(hero);
     if (gap != null && gap >= 7 && st.due > 0) {
-      el.querySelector(".hero").before(h(`<div class="banner">Anh nghỉ ${gap} ngày rồi. Ôn nhanh ${Math.min(st.due, 10)} thẻ (khoảng 5 phút) trước khi học tiếp nhé.</div>`));
-      const r = h(`<a class="btn primary block" href="#/review">Ôn nhanh trước</a>`);
-      acts.append(r);
-      acts.append(h(`<a class="btn block" href="#/l/${np.meta.id}/${np.part.id}">Bỏ qua, học tiếp phần ${np.part.id}</a>`));
-    } else {
-      acts.append(h(`<a class="btn primary block" href="#/l/${np.meta.id}/${np.part.id}">Học tiếp: phần ${np.part.id} — ${esc(np.part.title)} (~${np.part.minutes || 20} phút)</a>`));
-      acts.append(h(`<a class="btn block" href="#/review">${st.due ? `Ôn tập ${st.due} thẻ (~${Math.max(3, Math.ceil(st.due / 3))} phút)` : "Chưa có thẻ cần ôn"}</a>`));
+      hero.before(h(`<div class="banner">Anh nghỉ ${gap} ngày rồi. Nên ôn nhanh ${Math.min(st.due, 10)} thẻ (khoảng 5 phút) trước khi học tiếp.</div>`));
     }
   } else {
-    el.append(h(`<section class="hero"><div class="word ru">${ru("Молоде́ц!")}</div><div class="gloss">Anh đã xong các chủ đề hiện có. Nội dung mới sẽ được bổ sung.</div><div class="hero-actions"><a class="btn primary block" href="#/review">Ôn tập</a></div></section>`));
+    stack.append(h(`<section class="card raised hero"><div class="word ru">${ru("Молоде́ц!")}</div><div class="gloss">Anh đã xong các chủ đề hiện có. Nội dung mới sẽ được bổ sung.</div></section>`));
   }
-  el.append(h(`<div class="stats">
+
+  stack.append(st.due
+    ? h(`<a class="review-card" href="#/review"><span><b>${st.due} thẻ cần ôn</b><span class="sub">khoảng ${Math.max(2, Math.ceil(st.due / 3))} phút</span></span><span class="act">Ôn ngay</span></a>`)
+    : h(`<a class="review-card empty" href="#/review"><span><b>Chưa có thẻ cần ôn</b><span class="sub muted" style="color:var(--muted)">Học xong một phần để có thẻ ôn tập</span></span><span class="act">›</span></a>`));
+
+  // metro map: current topic, one before, two after
+  stack.append(h(`<div class="sec-title">Tuyến học của anh</div>`));
+  const map = h(`<div class="map"></div>`);
+  const ci = np ? course.topics.findIndex(t => t.id === np.meta.id) : course.topics.length - 1;
+  const from = Math.max(0, ci - 1), to = Math.min(course.topics.length, from + 4);
+  course.topics.slice(from, to).forEach(t => {
+    const a = h(`<a href="#/path" style="text-decoration:none;color:inherit;display:block"></a>`);
+    a.append(stopEl(t, { current: np && np.meta.id === t.id }));
+    map.append(a);
+  });
+  stack.append(map);
+
+  stack.append(h(`<div class="stats">
     <div class="stat"><b>${s.days.length}</b><span>ngày đã học</span></div>
     <div class="stat"><b>${st.learned}</b><span>câu/từ đã thuộc</span></div>
     <div class="stat"><b>${st.total}</b><span>câu/từ đã gặp</span></div>
   </div>`));
+
   const errs = Object.entries(s.errors).sort((a, b) => b[1] - a[1]).slice(0, 4);
   if (errs.length) {
-    el.append(h(`<div class="panel"><h3>Lỗi hay gặp</h3><p class="small muted">Phần ôn tập ưu tiên những chỗ này.</p>${errs.map(([t, n]) => `<div class="row"><span>${esc(errorLabel(t))}</span><span class="spacer"></span><span class="tag">${n} lần</span></div>`).join("")}</div>`));
+    stack.append(h(`<div class="sec-title">Lỗi hay gặp</div>`));
+    stack.append(h(`<div class="card">${errs.map(([t, n]) => `<div class="err-row"><span>${esc(errorLabel(t))}</span><span class="spacer"></span><span class="tag">${n} lần</span></div>`).join("")}<p class="small muted" style="margin-bottom:0">Phần ôn tập ưu tiên những chỗ này.</p></div>`));
   }
   if (!ttsAvailable() || !russianVoices().length) {
-    el.append(h(`<div class="banner info">Nếu nút ▶ không đọc được tiếng Nga: vào Cài đặt iPhone → Trợ năng → Nội dung được đọc → Giọng nói → Tiếng Nga, tải một giọng (ví dụ Milena).</div>`));
+    stack.append(h(`<div class="banner info small">Nếu nút ▶ không đọc được tiếng Nga: Cài đặt iPhone → Trợ năng → Nội dung được đọc → Giọng nói → Tiếng Nga, tải một giọng (ví dụ Milena).</div>`));
   }
   view.append(el);
 }
 
 /* ---------- path ---------- */
 function renderPath() {
-  const el = h(`<div><h1>Lộ trình</h1><p class="muted">Học theo tiến độ, không theo lịch. Có thể nhảy chủ đề — app chỉ nhắc kiến thức nền còn thiếu.</p><div class="path"></div></div>`);
-  const box = el.querySelector(".path");
   const np = nextPart();
-  for (const t of course.topics) {
-    const data = topics[t.id];
-    const done = data && topicDone(t.id);
-    const current = np && np.meta.id === t.id;
-    const node = h(`<div class="topic ${done ? "done" : ""} ${current ? "current" : ""} ${data ? "" : "locked"}">
-      <div class="t-head"><span class="t-num">${t.n}</span><h3>${esc(t.title)}</h3></div>
-      <div class="ru muted">${ru(t.hero)}</div>
-      <div class="parts"></div>
-    </div>`);
-    const parts = node.querySelector(".parts");
-    if (data) {
-      for (const p of data.parts) {
-        const pd = store.partDone(partKey(t.id, p.id));
-        parts.append(h(`<a class="part-chip ${pd ? "done" : ""}" href="#/l/${t.id}/${p.id}"><span class="mark">${pd ? "✓" : p.id}</span>${esc(p.title)}</a>`));
-      }
-    } else {
-      parts.append(h(`<span class="small muted">Đang soạn — sẽ có trước khi anh học tới.</span>`));
-    }
-    box.append(node);
-  }
+  const doneCount = course.topics.filter(t => topics[t.id] && topicDone(t.id)).length;
+  const el = h(`<div></div>`);
+  el.append(band({ title: "Lộ trình", greet: "Học theo tiến độ", pill: `${doneCount}/12 chủ đề`, short: true }));
+  const stack = h(`<div class="stack"></div>`);
+  stack.append(h(`<p class="small muted">Có thể nhảy chủ đề — app chỉ nhắc nếu kiến thức nền còn thiếu.</p>`));
+  const map = h(`<div class="map"></div>`);
+  course.topics.forEach(t => map.append(stopEl(t, { current: np && np.meta.id === t.id, withParts: true })));
+  stack.append(map);
+  el.append(stack);
   view.append(el);
 }
 
@@ -249,8 +299,9 @@ function renderLesson(tid, pid, stepIdx) {
   top.querySelector("[data-report]").addEventListener("click", () => reportModal(`Chủ đề ${meta.n} · Phần ${pid} · Bước ${stepIdx + 1}: ${step.title || step.type}`));
   view.append(top);
   if (missing.length && stepIdx === 0) view.append(h(`<div class="banner info small">Gợi ý: chủ đề ${missing.join(", ")} chưa xong. Học tiếp vẫn được — chỉ là có thể gặp kiến thức chưa học.</div>`));
-  view.append(h(`<div class="step-kicker">Chủ đề ${meta.n} · Phần ${pid} · ${stepIdx + 1}/${part.steps.length}</div>`));
-  view.append(h(`<h2>${esc(step.title || "")}</h2>`));
+  setLine(tid);
+  view.append(h(`<div class="step-head"><span class="lb">${meta.n}</span><span class="step-kicker">Phần ${pid} · ${esc(part.title)} · bước ${stepIdx + 1}/${part.steps.length}</span></div>`));
+  view.append(h(`<h2 class="step-title">${esc(step.title || "")}</h2>`));
 
   const body = h(`<div class="step-body"></div>`);
   view.append(body);
@@ -397,15 +448,15 @@ function quizRunner(s, body, { renderQ, onAnswer }) {
   const show = () => {
     box.innerHTML = "";
     if (i >= qs.length) {
-      box.append(h(`<div class="panel"><h3>Kết quả: ${right}/${qs.length} đúng</h3><p class="muted">${right === qs.length ? "Rất tốt." : "Câu sai đã được đưa vào phần ôn tập."}</p></div>`));
-      const again = h(`<button class="btn" type="button">Làm lại</button>`);
+      box.append(h(`<div class="card result"><div class="score">${right}/${qs.length}</div><p><b>${right === qs.length ? "Đúng hết — rất tốt." : "câu đúng"}</b></p><p class="muted small">${right === qs.length ? "Bấm Tiếp tục để sang bước sau." : "Câu sai đã được đưa vào phần ôn tập."}</p></div>`));
+      const again = h(`<button class="btn block" type="button">Làm lại</button>`);
       again.addEventListener("click", () => { i = 0; right = 0; show(); });
       box.append(again);
       store.logEvent("quiz_completed", s.title, { right, total: qs.length });
       return;
     }
     const q = qs[i];
-    box.append(h(`<div class="small muted">Câu ${i + 1}/${qs.length}</div>`));
+    box.append(h(`<div class="q-count" aria-label="Câu ${i + 1}/${qs.length}">${qs.map((_, k) => `<i class="${k < i ? "done" : k === i ? "now" : ""}"></i>`).join("")}</div>`));
     renderQ(q, box, ok => {
       if (ok) right++;
       onAnswer?.(q, ok);
@@ -534,17 +585,20 @@ STEP.shadow = (s, body) => {
   const show = () => {
     box.innerHTML = "";
     if (i >= s.items.length) {
-      box.append(h(`<div class="panel"><h3>Xong ${s.items.length} câu.</h3><p class="muted">Chấm phát âm bằng AI sẽ có ở bản sau. Hiện tại: tự so bản ghi âm của mình với giọng mẫu.</p></div>`));
-      const again = h(`<button class="btn" type="button">Luyện lại</button>`); again.addEventListener("click", () => { i = 0; level = 1; show(); }); box.append(again);
+      box.append(h(`<div class="card result"><div class="score">${s.items.length}</div><p><b>câu đã luyện</b></p><p class="muted small">Chấm phát âm bằng AI sẽ có ở bản sau. Hiện tại: tự so bản ghi âm của mình với giọng mẫu.</p></div>`));
+      const again = h(`<button class="btn block" type="button">Luyện lại</button>`); again.addEventListener("click", () => { i = 0; level = 1; show(); }); box.append(again);
       return;
     }
     const it = items[s.items[i]];
-    box.append(h(`<div class="small muted">Câu ${i + 1}/${s.items.length} · ${esc(it.vi)}</div>`));
-    box.append(h(`<div class="steps3">${LEVELS.map((l, k) => `<span class="${k + 1 === level ? "on" : ""}">${k + 1} · ${l}</span>`).join("")}</div>`));
-    box.append(h(`<div class="shadow-line">${hintLine(it.ru, level)}</div>`));
-    if (level === 1) box.append(h(translitLine(it.ru)));
-    const r = h(`<div class="row"></div>`); r.append(playBtn(it.ru), playBtn(it.ru, { slow: true })); box.append(r);
-    box.append(recorderUI());
+    box.append(h(`<div class="q-count" aria-label="Câu ${i + 1}/${s.items.length}">${s.items.map((_, k) => `<i class="${k < i ? "done" : k === i ? "now" : ""}"></i>`).join("")}</div>`));
+    const card = h(`<div class="shadow-card"></div>`);
+    box.append(card);
+    card.append(h(`<div class="steps3">${LEVELS.map((l, k) => `<span class="${k + 1 === level ? "on" : k + 1 < level ? "past" : ""}">${k + 1} · ${l}</span>`).join("")}</div>`));
+    card.append(h(`<div class="shadow-line">${hintLine(it.ru, level)}</div>`));
+    if (level === 1) card.append(h(translitLine(it.ru)));
+    card.append(h(`<div class="small muted" style="margin-top:4px">${esc(it.vi)}</div>`));
+    const r = h(`<div class="row" style="margin-top:14px"></div>`); r.append(playBtn(it.ru), playBtn(it.ru, { slow: true })); card.append(r);
+    card.append(recorderUI());
     const nav = h(`<div class="row" style="margin-top:12px"></div>`);
     if (level < 3) {
       const nx = h(`<button class="btn primary" type="button">Bước ${level + 1}</button>`);
@@ -657,25 +711,29 @@ STEP.write = (s, body, ctx) => {
 
 /* ---------- review ---------- */
 function renderReview() {
-  const el = h(`<div><h1>Ôn tập</h1><div class="rv"></div></div>`);
-  view.append(el);
-  const box = el.querySelector(".rv");
   let queue = dueCards(20).filter(id => items[id]);
+  const el = h(`<div></div>`);
+  el.append(band({ title: "Ôn tập", greet: "Ưu tiên chỗ hay sai", pill: queue.length ? `${queue.length} thẻ` : "", short: true }));
+  const box = h(`<div class="stack rv"></div>`);
+  el.append(box);
+  view.append(el);
   let done = 0;
   const show = () => {
     box.innerHTML = "";
     if (!queue.length) {
       const st = stats();
-      box.append(h(`<div class="panel"><h3>${done ? `Xong ${done} thẻ.` : "Không có thẻ nào cần ôn lúc này."}</h3><p class="muted">${st.total ? `Đã gặp ${st.total} câu/từ, thuộc ${st.learned}.` : "Học một phần bài để có thẻ ôn tập."}</p></div>`));
+      document.documentElement.style.setProperty("--lc", "#2E9E4F");
+      box.append(h(`<div class="card result"><div class="score">${done || "0"}</div><p><b>${done ? "thẻ đã ôn hôm nay" : "Không có thẻ nào cần ôn lúc này"}</b></p><p class="muted small">${st.total ? `Đã gặp ${st.total} câu/từ, thuộc ${st.learned}.` : "Học xong một phần bài để có thẻ ôn tập."}</p></div>`));
       box.append(h(`<a class="btn primary block" href="#/">Về trang chính</a>`));
       return;
     }
     const id = queue[0];
     const it = items[id];
+    setLine(it.topic);
     const c = store.get().srs[id];
     const reverse = c && c.box >= 2 && Math.random() < 0.5;
-    box.append(h(`<div class="small muted">Còn ${queue.length} thẻ</div>`));
-    const card = h(`<div class="panel flash"></div>`);
+    box.append(h(`<div class="small muted">Còn ${queue.length} thẻ · chủ đề ${course.topics.find(t => t.id === it.topic)?.n || ""}</div>`));
+    const card = h(`<div class="card raised flash"></div>`);
     if (reverse) {
       card.append(h(`<div><div class="small muted">Nói hoặc nghĩ câu tiếng Nga:</div><h2 style="margin:10px 0">${esc(it.vi)}</h2></div>`));
     } else {
@@ -695,7 +753,7 @@ function renderReview() {
     card.append(ans);
     box.append(card);
     const showBtn = h(`<button class="btn primary block" type="button">Hiện đáp án</button>`);
-    const grades = h(`<div class="grade" hidden><button class="btn" type="button" data-g="0">Quên</button><button class="btn" type="button" data-g="1">Khó</button><button class="btn primary" type="button" data-g="2">Nhớ</button></div>`);
+    const grades = h(`<div class="grade" hidden><button class="btn g0" type="button" data-g="0">Quên</button><button class="btn" type="button" data-g="1">Khó</button><button class="btn primary" type="button" data-g="2">Nhớ</button></div>`);
     showBtn.addEventListener("click", () => { ans.hidden = false; showBtn.hidden = true; grades.hidden = false; if (reverse) speak(it.ru); });
     grades.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
       const g = Number(b.dataset.g);
@@ -711,8 +769,12 @@ function renderReview() {
 /* ---------- settings ---------- */
 function renderSettings() {
   const s = store.get().settings;
-  const el = h(`<div><h1>Cài đặt</h1>
+  const el = h(`<div>
+    <header class="band short"><div class="greet">Áp dụng cho máy này</div><div class="title">Cài đặt</div><div class="stripe"></div></header>
+    <div class="stack">
+    <div class="sec-title">Hiển thị và giọng đọc</div>
     <div class="panel">
+      <label class="setting"><span class="lbl">Tên hiển thị</span><input class="field sans" data-k="name" value="${esc(s.name || "")}" style="width:50%" autocomplete="off"></label>
       <label class="setting"><span class="lbl">Hiện chuyển tự Latinh<div class="small muted">Nên tắt sau khoảng tuần thứ 3.</div></span><input class="switch" type="checkbox" data-k="translit" ${s.translit ? "checked" : ""}></label>
       <label class="setting"><span class="lbl">Tô đỏ nguyên âm mang trọng âm</span><input class="switch" type="checkbox" data-k="stressColor" ${s.stressColor ? "checked" : ""}></label>
       <label class="setting"><span class="lbl">Tốc độ đọc</span><select class="field" data-k="rate" style="width:auto">
@@ -723,9 +785,9 @@ function renderSettings() {
         <option value="auto" ${s.theme === "auto" ? "selected" : ""}>Theo máy</option><option value="light" ${s.theme === "light" ? "selected" : ""}>Sáng</option><option value="dark" ${s.theme === "dark" ? "selected" : ""}>Tối</option>
       </select></label>
     </div>
-    <h3 style="margin-top:20px">Báo lỗi nội dung</h3>
+    <div class="sec-title">Báo lỗi nội dung</div>
     <div class="panel reports"></div>
-    <h3 style="margin-top:20px">Sao lưu</h3>
+    <div class="sec-title">Sao lưu</div>
     <div class="panel">
       <p class="small muted">Tiến độ chỉ lưu trên máy này. Thỉnh thoảng sao lưu ra file (lưu vào Tệp/iCloud).</p>
       <div class="row"><button class="btn" type="button" data-export>Tải file sao lưu</button><label class="btn" style="cursor:pointer">Khôi phục từ file<input type="file" accept="application/json,.json" data-import hidden></label></div>
@@ -734,7 +796,7 @@ function renderSettings() {
       <button class="btn danger" type="button" data-reset>Xóa toàn bộ tiến độ</button>
     </div>
     <p class="small muted">Phiên bản ${APP_VERSION}. Video thuộc về các kênh: Russki with Andrei, Easy Russian with Tony, Wossow — app chỉ nhúng, không lưu video.</p>
-  </div>`);
+  </div></div>`);
   // voices
   const vs = el.querySelector('[data-k="voiceURI"]');
   const fillVoices = () => {

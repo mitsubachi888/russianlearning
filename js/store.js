@@ -4,7 +4,7 @@ const KEY = "ru-learning-v1";
 
 const DEFAULT = () => ({
   version: 1,
-  settings: { translit: true, stressColor: true, rate: 0.9, voiceURI: "", theme: "auto" },
+  settings: { name: "Michael", translit: true, stressColor: true, rate: 0.9, voiceURI: "", theme: "auto" },
   steps: {},      // "t01.A.3": ISO date when completed
   parts: {},      // "t01.A": ISO date when completed
   srs: {},        // itemId: { box, due, wrong, right, last }

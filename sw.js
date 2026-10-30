@@ -1,5 +1,5 @@
 // Offline cache: app shell + lesson content. Bump VERSION when files change.
-const VERSION = "ru-v0.1.1";
+const VERSION = "ru-v0.2.0";
 const ASSETS = [
   "./", "index.html", "manifest.webmanifest",
   "css/app.css",

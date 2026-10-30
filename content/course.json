@@ -1,17 +1,104 @@
 {
-  "title": "Tiếng Nga giao tiếp — lộ trình 12 chủ đề",
-  "topics": [
-    { "id": "t01", "n": 1, "title": "Chữ cái (1) và câu chào", "hero": "Здра́вствуйте!", "gloss": "Xin chào", "file": "content/t01.json" },
-    { "id": "t02", "n": 2, "title": "Chữ cái (2) và câu cửa miệng", "hero": "Коне́чно!", "gloss": "Tất nhiên!", "file": "content/t02.json" },
-    { "id": "t03", "n": 3, "title": "Giới thiệu, làm quen", "hero": "О́чень прия́тно!", "gloss": "Rất vui được gặp", "file": "content/t03.json" },
-    { "id": "t04", "n": 4, "title": "Chào chia tay, tuổi, số điện thoại", "hero": "Ско́лько вам лет?", "gloss": "Bạn bao nhiêu tuổi?" },
-    { "id": "t05", "n": 5, "title": "Gia đình", "hero": "Э́то моя́ семья́.", "gloss": "Đây là gia đình tôi." },
-    { "id": "t06", "n": 6, "title": "Sở thích, công việc, một ngày của tôi", "hero": "Я люблю́ чита́ть.", "gloss": "Tôi thích đọc sách." },
-    { "id": "t07", "n": 7, "title": "Sống, làm việc ở đâu", "hero": "Где вы живёте?", "gloss": "Bạn sống ở đâu?" },
-    { "id": "t08", "n": 8, "title": "Đi đâu, đi bằng gì", "hero": "Куда́ вы идёте?", "gloss": "Bạn đi đâu?" },
-    { "id": "t09", "n": 9, "title": "Mô tả người, vật", "hero": "Како́й краси́вый дом!", "gloss": "Ngôi nhà đẹp quá!" },
-    { "id": "t10", "n": 10, "title": "Giờ, ngày tháng, sinh nhật", "hero": "Кото́рый час?", "gloss": "Mấy giờ rồi?" },
-    { "id": "t11", "n": 11, "title": "Mẫu câu ngắn và lời chúc", "hero": "С днём рожде́ния!", "gloss": "Chúc mừng sinh nhật!" },
-    { "id": "t12", "n": 12, "title": "Ôn tổng hợp", "hero": "Молоде́ц!", "gloss": "Giỏi lắm!" }
-  ]
+ "title": "Tiếng Nga giao tiếp — lộ trình 12 chủ đề",
+ "topics": [
+  {
+   "id": "t01",
+   "n": 1,
+   "title": "Chữ cái (1) và câu chào",
+   "hero": "Здра́вствуйте!",
+   "gloss": "Xin chào",
+   "file": "content/t01.json",
+   "color": "#E2333B"
+  },
+  {
+   "id": "t02",
+   "n": 2,
+   "title": "Chữ cái (2) và câu cửa miệng",
+   "hero": "Коне́чно!",
+   "gloss": "Tất nhiên!",
+   "file": "content/t02.json",
+   "color": "#F6B800"
+  },
+  {
+   "id": "t03",
+   "n": 3,
+   "title": "Giới thiệu, làm quen",
+   "hero": "О́чень прия́тно!",
+   "gloss": "Rất vui được gặp",
+   "file": "content/t03.json",
+   "color": "#2E9E4F"
+  },
+  {
+   "id": "t04",
+   "n": 4,
+   "title": "Chào chia tay, tuổi, số điện thoại",
+   "hero": "Ско́лько вам лет?",
+   "gloss": "Bạn bao nhiêu tuổi?",
+   "color": "#1E88E5"
+  },
+  {
+   "id": "t05",
+   "n": 5,
+   "title": "Gia đình",
+   "hero": "Э́то моя́ семья́.",
+   "gloss": "Đây là gia đình tôi.",
+   "color": "#8E44AD"
+  },
+  {
+   "id": "t06",
+   "n": 6,
+   "title": "Sở thích, công việc, một ngày của tôi",
+   "hero": "Я люблю́ чита́ть.",
+   "gloss": "Tôi thích đọc sách.",
+   "color": "#E67E22"
+  },
+  {
+   "id": "t07",
+   "n": 7,
+   "title": "Sống, làm việc ở đâu",
+   "hero": "Где вы живёте?",
+   "gloss": "Bạn sống ở đâu?",
+   "color": "#0097A7"
+  },
+  {
+   "id": "t08",
+   "n": 8,
+   "title": "Đi đâu, đi bằng gì",
+   "hero": "Куда́ вы идёте?",
+   "gloss": "Bạn đi đâu?",
+   "color": "#8D6E63"
+  },
+  {
+   "id": "t09",
+   "n": 9,
+   "title": "Mô tả người, vật",
+   "hero": "Како́й краси́вый дом!",
+   "gloss": "Ngôi nhà đẹp quá!",
+   "color": "#C2185B"
+  },
+  {
+   "id": "t10",
+   "n": 10,
+   "title": "Giờ, ngày tháng, sinh nhật",
+   "hero": "Кото́рый час?",
+   "gloss": "Mấy giờ rồi?",
+   "color": "#7CB342"
+  },
+  {
+   "id": "t11",
+   "n": 11,
+   "title": "Mẫu câu ngắn và lời chúc",
+   "hero": "С днём рожде́ния!",
+   "gloss": "Chúc mừng sinh nhật!",
+   "color": "#5C6BC0"
+  },
+  {
+   "id": "t12",
+   "n": 12,
+   "title": "Ôn tổng hợp",
+   "hero": "Молоде́ц!",
+   "gloss": "Giỏi lắm!",
+   "color": "#546E7A"
+  }
+ ]
 }
