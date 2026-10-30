@@ -3,7 +3,16 @@ import * as store from "./store.js";
 import { ensureCard, grade, exerciseResult, dueCards, stats } from "./srs.js";
 import { speak, Recorder, russianVoices, ttsAvailable } from "./speech.js";
 
-const APP_VERSION = "0.1.0";
+const APP_VERSION = "0.1.1";
+
+// iOS Safari sometimes still zooms on fast double taps outside buttons; block that gesture only.
+let lastTouchEnd = 0;
+document.addEventListener("touchend", e => {
+  const now = Date.now();
+  if (now - lastTouchEnd < 350 && !e.target.closest("input, textarea, select")) e.preventDefault();
+  lastTouchEnd = now;
+}, { passive: false });
+document.addEventListener("dblclick", e => e.preventDefault(), { passive: false });
 const view = document.getElementById("view");
 let course = null;
 const topics = {};      // id -> topic json

@@ -37,6 +37,8 @@
 }
 
 *{box-sizing:border-box}
+/* Stop iOS double-tap zoom (pinch-zoom still works) */
+html,body,button,a,input,textarea,select,label,.letter,.opt,.iconbtn{touch-action:manipulation}
 html,body{margin:0;padding:0}
 body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 button,input,textarea,select{font:inherit;color:inherit}
